@@ -1,0 +1,12 @@
+---
+title: "LLM_Logic"
+author: "Carson Chiem"
+date: "2024-01-22"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
