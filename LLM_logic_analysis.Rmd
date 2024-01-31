@@ -10,27 +10,38 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
+# importing packages and data
 library(tidyverse)
-```
-
-```{r}
 library(readr)
 dataset <- read_csv("output_responses_1-7.csv")
 ```
+
 ```{r}
+# removing controls from dataset
 dataset <- dataset %>% 
   filter(Condition != "Control")
 
+# finding average responses for each grouping of variables
 avg_responses = dataset %>%
   group_by(Continuation, Condition, Study) %>%
   summarise(avg_response = mean(Response))
 
+# renaming values 
 avg_responses$Condition <- factor(avg_responses$Condition, levels = c("Experimental_N", "Experimental_W", "Experimental_O"), labels = c("Negation", "Without", "Other"))
 
+# plotting with created and original study prompts combined
+ggplot(avg_responses, aes(x = Condition, y = avg_response, fill = Continuation)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Average Response by Condition and Continuation",
+       x = "Condition",
+       y = "Average Response") +
+  theme_minimal()
+
+# plotting with separate graphs for original and created prompts
 ggplot(avg_responses, aes(x = Condition, y = avg_response, fill = Continuation)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ Study) +
-  labs(title = "Average Response by Condition and Continuation",
+  labs(title = "Average Response by Condition and Continuation, separated by study",
        x = "Condition",
        y = "Average Response") +
   theme_minimal()
