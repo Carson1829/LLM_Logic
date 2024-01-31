@@ -22,13 +22,14 @@ dataset <- dataset %>%
   filter(Condition != "Control")
 
 avg_responses = dataset %>%
-  group_by(Continuation, Condition) %>%
+  group_by(Continuation, Condition, Study) %>%
   summarise(avg_response = mean(Response))
 
 avg_responses$Condition <- factor(avg_responses$Condition, levels = c("Experimental_N", "Experimental_W", "Experimental_O"), labels = c("Negation", "Without", "Other"))
 
 ggplot(avg_responses, aes(x = Condition, y = avg_response, fill = Continuation)) +
   geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ Study) +
   labs(title = "Average Response by Condition and Continuation",
        x = "Condition",
        y = "Average Response") +
