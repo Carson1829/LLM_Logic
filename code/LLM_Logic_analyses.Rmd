@@ -1,1 +1,35 @@
+---
+title: "LLM_Logic"
+author: "Carson Chiem"
+date: "2024-01-22"
+output: word_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# importing packages and data
+library(tidyverse)
+dataset <- read_csv("../data/output_responses_1-7.csv")
+```
+
+```{r}
+# preparing dataframe
+# removing controls from dataset
+dataset = dataset %>% 
+  filter(Condition != "Control")
+
+# renaming values 
+dataset$Condition = factor(dataset$Condition, levels = c("Experimental_N", "Experimental_W", "Experimental_O"), labels = c("Negation", "Without", "Other"))
+```
+
+```{r}
+# finding average responses for each grouping of variables
+avg_responses = dataset %>%
+  group_by(Continuation, Condition) %>%
+  summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
+
+print(avg_responses)
+```
