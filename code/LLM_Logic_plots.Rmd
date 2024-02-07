@@ -12,8 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # importing packages and data
 library(tidyverse)
-library(readr)
-dataset <- read_csv("output_responses_1-7.csv")
+dataset <- read_csv("../data/output_responses_1-7.csv")
 ```
 
 ```{r}
@@ -55,6 +54,27 @@ ggplot(avg_responses_S, aes(x = Condition, y = avg_response, fill = Continuation
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ Study) +
   geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
+  labs(title = "Average Response by Condition and Continuation, separated by study",
+       x = "Condition",
+       y = "Average Response") +
+  theme_minimal()
+```
+
+```{r}
+# plotting 
+ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
+  labs(title = "Average Response by Condition and Continuation",
+       x = "Condition",
+       y = "Average Response") +
+  theme_minimal()
+```
+
+```{r}
+# plotting
+ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
+  facet_wrap(~ Study) +
   labs(title = "Average Response by Condition and Continuation, separated by study",
        x = "Condition",
        y = "Average Response") +
