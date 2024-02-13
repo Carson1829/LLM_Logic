@@ -64,9 +64,9 @@ ggplot(avg_responses_S, aes(x = Condition, y = avg_response, fill = Continuation
 # plotting 
 ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
   geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
-  labs(title = "Average Response by Condition and Continuation",
+  labs(title = "Responses by Condition and Continuation",
        x = "Condition",
-       y = "Average Response") +
+       y = "Response rating") +
   theme_minimal()
 ```
 
@@ -75,9 +75,9 @@ ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
 ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
   geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
   facet_wrap(~ Study) +
-  labs(title = "Average Response by Condition and Continuation, separated by study",
+  labs(title = "Responses by Condition and Continuation, separated by study",
        x = "Condition",
-       y = "Average Response") +
+       y = "Response rating") +
   theme_minimal()
 ```
 
