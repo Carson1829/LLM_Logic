@@ -32,8 +32,4 @@ avg_responses = dataset %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
 print(avg_responses)
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 021b5341919a13c6dc8640bcc4e0d25db65b58b9
