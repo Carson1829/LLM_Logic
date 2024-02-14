@@ -12,32 +12,24 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # importing packages and data
 library(tidyverse)
-dataset <- read_csv("../data/output_responses_1-7.csv")
-```
-
-```{r}
-# preparing dataframe
-# removing controls from dataset
-dataset = dataset %>% 
-  filter(Condition != "Control")
-
-# renaming values 
-dataset$Condition = factor(dataset$Condition, levels = c("Experimental_N", "Experimental_W", "Experimental_O"), labels = c("Negation", "Without", "Other"))
+# dataset = read_csv("../data/output_responses_1-7.csv")
+dataset = read_csv("C:/CS_programs/Python/code/LLM_connectives/LLM_Logic/LLM_Logic-2/data/lungu_scale_updated_responses.csv")
 ```
 
 ```{r}
 # bar plot with created and original study prompts combined
 # finding average responses for each grouping of variables
 avg_responses = dataset %>%
-  group_by(Continuation, Condition) %>%
+  group_by(Continuation, Type) %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
-# plotting 
-ggplot(avg_responses, aes(x = Condition, y = avg_response, fill = Continuation)) +
+# plotting
+ggplot(avg_responses, aes(x = Type, y = avg_response, fill = Continuation)) +
   geom_bar(stat = "identity", position = "dodge") +
-  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
-  labs(title = "Average Response by Condition and Continuation",
-       x = "Condition",
+  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd),
+                position = position_dodge(0.9), width = 0.2) +
+  labs(title = "Average Response by Type and Continuation",
+       x = "Type",
        y = "Average Response") +
   theme_minimal()
 ```
@@ -46,37 +38,39 @@ ggplot(avg_responses, aes(x = Condition, y = avg_response, fill = Continuation))
 # bar plot with separate graphs for original and created prompts
 # finding average responses for each grouping of variables including study
 avg_responses_S = dataset %>%
-  group_by(Continuation, Condition, Study) %>%
+  group_by(Continuation, Type, Study) %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
 # plotting
-ggplot(avg_responses_S, aes(x = Condition, y = avg_response, fill = Continuation)) +
+ggplot(avg_responses_S, aes(x = Type, y = avg_response, fill = Continuation)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ Study) +
   geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
-  labs(title = "Average Response by Condition and Continuation, separated by study",
-       x = "Condition",
+  labs(title = "Average Response by Type and Continuation, separated by study",
+       x = "Type",
        y = "Average Response") +
   theme_minimal()
 ```
 
 ```{r}
+# Dot plot
 # plotting 
-ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
-  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
-  labs(title = "Responses by Condition and Continuation",
-       x = "Condition",
+ggplot(dataset, aes(x = Type, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.3, binwidth = .3) +
+  labs(title = "Responses by Type and Continuation",
+       x = "Type",
        y = "Response rating") +
   theme_minimal()
 ```
 
 ```{r}
+# Dot plot
 # plotting
-ggplot(dataset, aes(x = Condition, y = Response, fill = Continuation)) +
-  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.5, binwidth = .3) +
+ggplot(dataset, aes(x = Type, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.3, binwidth = .3) +
   facet_wrap(~ Study) +
-  labs(title = "Responses by Condition and Continuation, separated by study",
-       x = "Condition",
+  labs(title = "Responses by Type and Continuation, separated by study",
+       x = "Type",
        y = "Response rating") +
   theme_minimal()
 ```

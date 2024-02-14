@@ -1,0 +1,30 @@
+---
+title: "LLM_Logic_plots_C"
+author: "Carson Chiem"
+date: "2024-02-05"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# importing packages and data
+library(tidyverse)
+library(readr)
+dataset <- read_csv("C:/CS_programs/Python/code/LLM_connectives/LLM_Logic/LLM_Logic-2/data/contradiction_task_updated_responses.csv")
+```
+
+```{r}
+dataset <- dataset %>%
+  group_by(Condition) %>% # change to Type
+  mutate(Correct = Contradictory_cont == Response) %>%
+  count(Correct)
+view(dataset)
+```
+
+```{r}
+
+```
+
