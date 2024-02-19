@@ -2,7 +2,9 @@
 title: "LLM_Logic"
 author: "Carson Chiem"
 date: "2024-01-22"
-output: word_document
+output:
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -37,14 +39,14 @@ ggplot(avg_responses, aes(x = Type, y = avg_response, fill = Continuation)) +
 ```{r}
 # bar plot with separate graphs for original and created prompts
 # finding average responses for each grouping of variables including study
-avg_responses_S = dataset %>%
+avg_responses = dataset %>%
   group_by(Continuation, Type, Study) %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
 # plotting
-ggplot(avg_responses_S, aes(x = Type, y = avg_response, fill = Continuation)) +
+ggplot(avg_responses, aes(x = Type, y = avg_response, fill = Continuation)) +
   geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap(~ Study) +
+  facet_wrap(~ Study, drop = TRUE, scales = "free_x") +
   geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
   labs(title = "Average Response by Type and Continuation, separated by study",
        x = "Type",
@@ -68,7 +70,7 @@ ggplot(dataset, aes(x = Type, y = Response, fill = Continuation)) +
 # plotting
 ggplot(dataset, aes(x = Type, y = Response, fill = Continuation)) +
   geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.3, binwidth = .3) +
-  facet_wrap(~ Study) +
+  facet_wrap(~ Study, drop = TRUE, scales = "free_x") +
   labs(title = "Responses by Type and Continuation, separated by study",
        x = "Type",
        y = "Response rating") +

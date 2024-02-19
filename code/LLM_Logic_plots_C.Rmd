@@ -18,13 +18,21 @@ dataset <- read_csv("C:/CS_programs/Python/code/LLM_connectives/LLM_Logic/LLM_Lo
 
 ```{r}
 dataset <- dataset %>%
-  group_by(Condition) %>% # change to Type
+  group_by(Condition, Type) %>% # change to Type
   mutate(Correct = Contradictory_cont == Response) %>%
-  count(Correct)
+  count(Correct) %>%
+  mutate(Percentage = n / sum(n)) %>%
+  filter(Correct == TRUE)
 view(dataset)
 ```
 
 ```{r}
-
+# plotting
+ggplot(dataset, aes(x = Condition, y = Percentage, fill = Type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Proportion of Correct Responses by Type and Condition",
+       x = "Condition",
+       y = "Proportion of Correct Responses") +
+  theme_minimal()
 ```
 
