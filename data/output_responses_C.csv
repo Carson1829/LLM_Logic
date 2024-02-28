@@ -1,0 +1,551 @@
+Prompt,Condition,Study,Type,Contradictory_cont,Response
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is upset. Clearly, he didn’t pass the semantics or the syntax exam.  A: I wonder which it was. B: And it wouldn’t be the first time he failed those classes. C: So he got an A on both tests.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It’s cold in this house. I bet you, John didn’t close the window or the back door.  A: So, look, both the window and back door are closed. B: I wonder which one of those two we’ll find open. C: Look, just as I said, both of them are wide open!",Experimental,original,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jim said he wants to eat less junk food. I guess that's why he came back from the grocery store without cake or soda. A: So I saw cake, soda, and chocolate in the grocery bags he brought home. B: I forget which. C: He's sworn off both.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: The man in the movie was very short. B: His parents are both tall too. C: He is also very muscular.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary is sad. She left the restaurant without a sandwich or a cake. A: They were out of both. B: I don’t know which. C: So she spent ten dollars on the sandwich and the cake.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My grandmother made these cookies without rum or cinnamon. A: So the cookies tasted like rum and cinnamon. B: Instead of those ingredients she added homemade brandy. C: I can’t remember which.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: She had band practice right before. B: My friend arrived early to class. C: The busses ran late.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary failed the Spanish test. She didn’t study the vocabulary words or the grammar. A: I don’t know which. B: So she did really well on the grammar questions and the vocabulary words. C: She didn’t study either.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I really didn't like the piano performance. B: I played piano growing up. C: The notes sounded very soothing.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie is happy. She left being pulled over without a ticket for speeding or a ticket for a broken tail light. A: So she received two tickets during the stop. B: She’s happy she doesn’t have any tickets to pay. C: I don’t know which.",Experimental,created,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: She had band practice right before. B: My friend did not come late to class. C: The busses ran late.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John made it through all of college without buying coffee or bread. A: He said they were both a waste of money. B: I forget which. C: So John lived on toast and black coffee during college.",Experimental,created,Without,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie doesn’t like trees or flowers. A: I don’t remember which. B: So she's a huge nature buff. C: She doesn’t like nature in general.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The smoke alarm went off. I bet John didn’t open the window or the door. A: Look, both the window and the door are still closed. B: I wonder which. C: So, look, he opened them both.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I played piano growing up. B: The notes sounded very soothing. C: I really hated the piano performance.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts that Sue played football or tennis. A: He thinks she focused on one of the two. B: He thinks she never did any ball sports. C: So he thinks she did both.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John didn’t get the job. He didn’t bring his resume or a list of references. A: He didn’t bring either. B: So he brought his resume, a list of references, and a thoughful present. C: I don’t know which.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: The car radio has been working well. B: It is really old. C: I don't have enough money to repair it.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: It is really old. B: I don't have enough money to repair it. C: The car radio is not broken.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people took the appetizer or the dessert. A: So both were gone by the end of the night. B: I don’t remember which. C: The main dish was already expensive.",Experimental,original,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: I heard there was a storm coming. B: The weather is very calm today. C: The ocean breeze feels nice.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Apparently, few people are able to recite back a sequence of twelve letters or twelve numbers. A: So most people are able to recite twelve numbers in a row. B: The limit is usually ten. C: I don’t remember which.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is annoyed. Mary showed up to his birthday party without a present or a card. A: I don’t know which. B: She forgot them both at home. C: So Mary brought a thoughtful gift and a handwritten card to John's birthday party.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Amy came back from the mall without buying a sweater or perfume A: So just like she always does, Amy came back from the mall with a new sweater and some expensive perfume. B: She said she couldn't find anything she liked there. C: I'm not sure which.",Experimental,created,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: There was something on the tracks. B: The train got here on time. C: The delay was really long.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that Paul read The Brothers Karamazov or Anna Karenina. A: She thinks he never reads Russian literature. B: So she knows he's read all the classics of Russian literature. C: She thinks he had time for only one of them.",Experimental,original,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Peter told me he needed to travel light. To judge by the small size of his bag, he was travelling without his computer or his movie camera.  A: So his bag had both his computer and movie camera in it when I looked. B: I am sure he was a lot happier without electronic devices. C: I wonder which of the two he decided to give up.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in the house. A: There is a winter storm. B: The heater is broken. C: It is not very cold in the house.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: John's son is not a picky eater. B: He is very stubborn. C: He only likes pizza.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts Mary knows Spanish or French. A: He thinks she can only speak one. B: So he has heard her speaking both. C: He thinks she can only speak English.",Experimental,created,Other DE,B,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary rarely speaks German or French. A: So she often switches between both. B: She usually only speaks English. C: I don’t remember which.",Experimental,created,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Kate used to live without coffee or chocolate. A: Now she cannot imagine her life without them. B: So she used to buy a lot of lattes and chocolate chip cookies. C: I don't remember which.",Experimental,original,Without,B,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: There was something on the tracks. B: The delay was really long. C: The train arrived on time.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: My friend was not loud while watching TV. B: He was watching a game show. C: He has not self-awareness.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that John watched Mission Impossible or James Bond. A: So she knows he's watched all the action movies that have come out since the 1900s. B: She thinks he only saw one. C: She thinks he wouldn’t watch any action movies.",Experimental,created,Other DE,A,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Mary didn’t invite John or Suzi to her birthday party. A: She’s upset with both of them and doesn’t want to see them. B: So she invited them both. C: I don’t know which of them.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jane is worried. She got to the airport without her passport or her credit card. A: I don't remember which. B: She forgot all her personal stuff in the cab to the airport! C: So she had her passport and her credit card in her bag.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doesn’t like cats or dogs. A: So she likes all animals. B: I don’t remember which. C: She had traumatizing experiences with both.",Experimental,original,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It seems John has lived here for years without medical or house insurance. A: So John spends a lot on medical and house insurance. B: I don’t remember which one. C: Only now has it occurred to him that he needs both of them.",Experimental,original,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely goes to the grocery story or the post office. A: I don’t remember which. B: He doesn’t really leave his house. C: So he often stops by the post office on his way to the grocery store.",Experimental,created,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I remember there was a family conflict. Mary didn’t speak with her mother or her sister. A: She was only talking with her father after that. B: So she talked to them both yesterday. C: I don’t know which.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in this house. A: It is very hot in this house. B: The heater is broken. C: There is a winter storm.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Annie doesn’t like chocolate or pie. A: She dislikes all types of dessert. B: I don’t know which. C: So she loves all types of dessert.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: It is not really windy today. B: The ocean breeze feels nice. C: I heard there was a storm coming.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people are able to recite the national anthem or the pledge of allegiance. A: Both are very hard to remember. B: I don’t remember which. C: So most can recite both.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The piano had a nice tune. B: It had a nice melody. C: The song did not sound very pleasant.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John went on holiday without his mother or his father. A: So he took them both on vacation because it's their anniversary. B: It's the first time he travels by himself. C: I don’t remember which.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He only likes pizza. B: He is very stubborn. C: John's son will eat everything.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The piano had a nice tune. B: The song sounded very unpleasant. C: It had a nice melody.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: The man is not very tall. B: He is also very muscular. C: His parents are both tall too.",Control,created,Negation,A,A
+"
+From options “A”, “B”, and “C”, which option contradicts the sentence: If I remember correctly, John doesn’t drink wine or beer.  A: The doctor has forbidden him alcohol. B: I don’t know which. C: So he drinks both.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: When he was little, John would rarely sleep with his mother or his father. A: I don’t remember which. B: He always preferred to sleep alone. C: So he liked to sleep with one parent on each side of him.",Experimental,original,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He was watching a game show. B: He has not self-awareness. C: My friend was very quiet while watching TV.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people chose to take Calculus or Statistics. A: I don’t know which. B: So most people take both in school. C: Both of those classes are very unpopular.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely visits his sister or his mother. A: I don’t remember which. B: So he spends as much time as possible with both. C: He says that they make him uncomfortable.",Experimental,original,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Peter told me he needed to travel light. To judge by the small size of his bag, he was travelling without his computer or his movie camera.  A: I wonder which of the two he decided to give up. B: I am sure he was a lot happier without electronic devices. C: So his bag had both his computer and movie camera in it when I looked.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Annie doesn’t like chocolate or pie. A: She dislikes all types of dessert. B: So she loves all types of dessert. C: I don’t know which.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: He is also very muscular. B: His parents are both tall too. C: The man is not very tall.",Control,created,Negation,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: His parents are both tall too. B: He is also very muscular. C: The man in the movie was very short.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely goes to the grocery story or the post office. A: He doesn’t really leave his house. B: So he often stops by the post office on his way to the grocery store. C: I don’t remember which.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The train arrived on time. B: The delay was really long. C: There was something on the tracks.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in the house. A: It is not very cold in the house. B: The heater is broken. C: There is a winter storm.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: The busses ran late. B: She had band practice right before. C: My friend arrived early to class.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jim said he wants to eat less junk food. I guess that's why he came back from the grocery store without cake or soda. A: I forget which. B: So I saw cake, soda, and chocolate in the grocery bags he brought home. C: He's sworn off both.",Experimental,created,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: She had band practice right before. B: The busses ran late. C: My friend did not come late to class.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jane is worried. She got to the airport without her passport or her credit card. A: She forgot all her personal stuff in the cab to the airport! B: I don't remember which. C: So she had her passport and her credit card in her bag.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The song did not sound very pleasant. B: The piano had a nice tune. C: It had a nice melody.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts that Sue played football or tennis. A: So he thinks she did both. B: He thinks she focused on one of the two. C: He thinks she never did any ball sports.",Experimental,original,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doesn’t like cats or dogs. A: She had traumatizing experiences with both. B: I don’t remember which. C: So she likes all animals.",Experimental,original,Negation,C,C
+"
+From options “A”, “B”, and “C”, which option contradicts the sentence: If I remember correctly, John doesn’t drink wine or beer.  A: The doctor has forbidden him alcohol. B: So he drinks both. C: I don’t know which.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: My friend was not loud while watching TV. B: He has not self-awareness. C: He was watching a game show.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The train got here on time. B: There was something on the tracks. C: The delay was really long.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Amy came back from the mall without buying a sweater or perfume A: She said she couldn't find anything she liked there. B: So just like she always does, Amy came back from the mall with a new sweater and some expensive perfume. C: I'm not sure which.",Experimental,created,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie is happy. She left being pulled over without a ticket for speeding or a ticket for a broken tail light. A: I don’t know which. B: She’s happy she doesn’t have any tickets to pay. C: So she received two tickets during the stop.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I played piano growing up. B: I really hated the piano performance. C: The notes sounded very soothing.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: When he was little, John would rarely sleep with his mother or his father. A: He always preferred to sleep alone. B: I don’t remember which. C: So he liked to sleep with one parent on each side of him.",Experimental,original,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that Paul read The Brothers Karamazov or Anna Karenina. A: She thinks he had time for only one of them. B: So she knows he's read all the classics of Russian literature. C: She thinks he never reads Russian literature.",Experimental,original,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: It is really old. B: I don't have enough money to repair it. C: The car radio has been working well.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that John watched Mission Impossible or James Bond. A: So she knows he's watched all the action movies that have come out since the 1900s. B: She thinks he wouldn’t watch any action movies. C: She thinks he only saw one.",Experimental,created,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John went on holiday without his mother or his father. A: It's the first time he travels by himself. B: So he took them both on vacation because it's their anniversary. C: I don’t remember which.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people are able to recite the national anthem or the pledge of allegiance. A: I don’t remember which. B: Both are very hard to remember. C: So most can recite both.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John didn’t get the job. He didn’t bring his resume or a list of references. A: So he brought his resume, a list of references, and a thoughful present. B: He didn’t bring either. C: I don’t know which.",Experimental,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie doesn’t like trees or flowers. A: So she's a huge nature buff. B: She doesn’t like nature in general. C: I don’t remember which.",Experimental,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely visits his sister or his mother. A: So he spends as much time as possible with both. B: He says that they make him uncomfortable. C: I don’t remember which.",Experimental,original,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is annoyed. Mary showed up to his birthday party without a present or a card. A: So Mary brought a thoughtful gift and a handwritten card to John's birthday party. B: She forgot them both at home. C: I don’t know which.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The smoke alarm went off. I bet John didn’t open the window or the door. A: I wonder which. B: Look, both the window and the door are still closed. C: So, look, he opened them both.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: The car radio is not broken. B: It is really old. C: I don't have enough money to repair it.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I remember there was a family conflict. Mary didn’t speak with her mother or her sister. A: She was only talking with her father after that. B: I don’t know which. C: So she talked to them both yesterday.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He is very stubborn. B: He only likes pizza. C: John's son is not a picky eater.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Apparently, few people are able to recite back a sequence of twelve letters or twelve numbers. A: I don’t remember which. B: The limit is usually ten. C: So most people are able to recite twelve numbers in a row.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: The ocean breeze feels nice. B: I heard there was a storm coming. C: It is not really windy today.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary rarely speaks German or French. A: She usually only speaks English. B: I don’t remember which. C: So she often switches between both.",Experimental,created,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He was watching a game show. B: My friend was very quiet while watching TV. C: He has not self-awareness.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It seems John has lived here for years without medical or house insurance. A: Only now has it occurred to him that he needs both of them. B: So John spends a lot on medical and house insurance. C: I don’t remember which one.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It’s cold in this house. I bet you, John didn’t close the window or the back door.  A: I wonder which one of those two we’ll find open. B: So, look, both the window and back door are closed. C: Look, just as I said, both of them are wide open!",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary failed the Spanish test. She didn’t study the vocabulary words or the grammar. A: I don’t know which. B: So she did really well on the grammar questions and the vocabulary words. C: She didn’t study either.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John made it through all of college without buying coffee or bread. A: He said they were both a waste of money. B: So John lived on toast and black coffee during college. C: I forget which.",Experimental,created,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people chose to take Calculus or Statistics. A: Both of those classes are very unpopular. B: I don’t know which. C: So most people take both in school.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Mary didn’t invite John or Suzi to her birthday party. A: She’s upset with both of them and doesn’t want to see them. B: So she invited them both. C: I don’t know which of them.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Kate used to live without coffee or chocolate. A: Now she cannot imagine her life without them. B: I don't remember which. C: So she used to buy a lot of lattes and chocolate chip cookies.",Experimental,original,Without,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary is sad. She left the restaurant without a sandwich or a cake. A: I don’t know which. B: They were out of both. C: So she spent ten dollars on the sandwich and the cake.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in this house. A: It is very hot in this house. B: There is a winter storm. C: The heater is broken.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My grandmother made these cookies without rum or cinnamon. A: I can’t remember which. B: So the cookies tasted like rum and cinnamon. C: Instead of those ingredients she added homemade brandy.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: I heard there was a storm coming. B: The ocean breeze feels nice. C: The weather is very calm today.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: It had a nice melody. B: The song sounded very unpleasant. C: The piano had a nice tune.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts Mary knows Spanish or French. A: He thinks she can only speak one. B: He thinks she can only speak English. C: So he has heard her speaking both.",Experimental,created,Other DE,C,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people took the appetizer or the dessert. A: The main dish was already expensive. B: So both were gone by the end of the night. C: I don’t remember which.",Experimental,original,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I really didn't like the piano performance. B: The notes sounded very soothing. C: I played piano growing up.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He only likes pizza. B: He is very stubborn. C: John's son will eat everything.",Control,created,Conceptual,C,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is upset. Clearly, he didn’t pass the semantics or the syntax exam.  A: So he got an A on both tests. B: And it wouldn’t be the first time he failed those classes. C: I wonder which it was.",Experimental,original,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I remember there was a family conflict. Mary didn’t speak with her mother or her sister. A: So she talked to them both yesterday. B: She was only talking with her father after that. C: I don’t know which.",Experimental,original,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people are able to recite the national anthem or the pledge of allegiance. A: So most can recite both. B: I don’t remember which. C: Both are very hard to remember.",Experimental,created,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely visits his sister or his mother. A: So he spends as much time as possible with both. B: He says that they make him uncomfortable. C: I don’t remember which.",Experimental,original,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people took the appetizer or the dessert. A: So both were gone by the end of the night. B: The main dish was already expensive. C: I don’t remember which.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Apparently, few people are able to recite back a sequence of twelve letters or twelve numbers. A: The limit is usually ten. B: I don’t remember which. C: So most people are able to recite twelve numbers in a row.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Annie doesn’t like chocolate or pie. A: I don’t know which. B: She dislikes all types of dessert. C: So she loves all types of dessert.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Peter told me he needed to travel light. To judge by the small size of his bag, he was travelling without his computer or his movie camera.  A: So his bag had both his computer and movie camera in it when I looked. B: I am sure he was a lot happier without electronic devices. C: I wonder which of the two he decided to give up.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jane is worried. She got to the airport without her passport or her credit card. A: She forgot all her personal stuff in the cab to the airport! B: I don't remember which. C: So she had her passport and her credit card in her bag.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary is sad. She left the restaurant without a sandwich or a cake. A: I don’t know which. B: They were out of both. C: So she spent ten dollars on the sandwich and the cake.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts that Sue played football or tennis. A: He thinks she focused on one of the two. B: He thinks she never did any ball sports. C: So he thinks she did both.",Experimental,original,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: My friend arrived early to class. B: The busses ran late. C: She had band practice right before.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: When he was little, John would rarely sleep with his mother or his father. A: So he liked to sleep with one parent on each side of him. B: I don’t remember which. C: He always preferred to sleep alone.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Mary didn’t invite John or Suzi to her birthday party. A: She’s upset with both of them and doesn’t want to see them. B: I don’t know which of them. C: So she invited them both.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The delay was really long. B: The train arrived on time. C: There was something on the tracks.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He only likes pizza. B: John's son will eat everything. C: He is very stubborn.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I really hated the piano performance. B: I played piano growing up. C: The notes sounded very soothing.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It seems John has lived here for years without medical or house insurance. A: So John spends a lot on medical and house insurance. B: Only now has it occurred to him that he needs both of them. C: I don’t remember which one.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The piano had a nice tune. B: It had a nice melody. C: The song sounded very unpleasant.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: He is also very muscular. B: The man is not very tall. C: His parents are both tall too.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My grandmother made these cookies without rum or cinnamon. A: So the cookies tasted like rum and cinnamon. B: Instead of those ingredients she added homemade brandy. C: I can’t remember which.",Experimental,original,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The piano had a nice tune. B: The song did not sound very pleasant. C: It had a nice melody.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It’s cold in this house. I bet you, John didn’t close the window or the back door.  A: I wonder which one of those two we’ll find open. B: So, look, both the window and back door are closed. C: Look, just as I said, both of them are wide open!",Experimental,original,Negation,B,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: I don't have enough money to repair it. B: It is really old. C: The car radio is not broken.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He is very stubborn. B: He only likes pizza. C: John's son is not a picky eater.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Amy came back from the mall without buying a sweater or perfume A: So just like she always does, Amy came back from the mall with a new sweater and some expensive perfume. B: I'm not sure which. C: She said she couldn't find anything she liked there.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in this house. A: There is a winter storm. B: It is very hot in this house. C: The heater is broken.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: The ocean breeze feels nice. B: I heard there was a storm coming. C: It is not really windy today.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Kate used to live without coffee or chocolate. A: Now she cannot imagine her life without them. B: So she used to buy a lot of lattes and chocolate chip cookies. C: I don't remember which.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: My friend was very quiet while watching TV. B: He has not self-awareness. C: He was watching a game show.",Control,created,Conceptual,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie is happy. She left being pulled over without a ticket for speeding or a ticket for a broken tail light. A: So she received two tickets during the stop. B: I don’t know which. C: She’s happy she doesn’t have any tickets to pay.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary rarely speaks German or French. A: She usually only speaks English. B: So she often switches between both. C: I don’t remember which.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jim said he wants to eat less junk food. I guess that's why he came back from the grocery store without cake or soda. A: I forget which. B: He's sworn off both. C: So I saw cake, soda, and chocolate in the grocery bags he brought home.",Experimental,created,Without,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He has not self-awareness. B: My friend was not loud while watching TV. C: He was watching a game show.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts Mary knows Spanish or French. A: He thinks she can only speak English. B: He thinks she can only speak one. C: So he has heard her speaking both.",Experimental,created,Other DE,C,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in the house. A: It is not very cold in the house. B: The heater is broken. C: There is a winter storm.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely goes to the grocery story or the post office. A: I don’t remember which. B: So he often stops by the post office on his way to the grocery store. C: He doesn’t really leave his house.",Experimental,created,Other DE,B,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: I heard there was a storm coming. B: The ocean breeze feels nice. C: The weather is very calm today.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doesn’t like cats or dogs. A: She had traumatizing experiences with both. B: I don’t remember which. C: So she likes all animals.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is upset. Clearly, he didn’t pass the semantics or the syntax exam.  A: And it wouldn’t be the first time he failed those classes. B: So he got an A on both tests. C: I wonder which it was.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: My friend did not come late to class. B: She had band practice right before. C: The busses ran late.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I really didn't like the piano performance. B: The notes sounded very soothing. C: I played piano growing up.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The delay was really long. B: There was something on the tracks. C: The train got here on time.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John didn’t get the job. He didn’t bring his resume or a list of references. A: I don’t know which. B: He didn’t bring either. C: So he brought his resume, a list of references, and a thoughful present.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John made it through all of college without buying coffee or bread. A: So John lived on toast and black coffee during college. B: He said they were both a waste of money. C: I forget which.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary failed the Spanish test. She didn’t study the vocabulary words or the grammar. A: I don’t know which. B: So she did really well on the grammar questions and the vocabulary words. C: She didn’t study either.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is annoyed. Mary showed up to his birthday party without a present or a card. A: So Mary brought a thoughtful gift and a handwritten card to John's birthday party. B: She forgot them both at home. C: I don’t know which.",Experimental,created,Without,A,B
+"
+From options “A”, “B”, and “C”, which option contradicts the sentence: If I remember correctly, John doesn’t drink wine or beer.  A: I don’t know which. B: So he drinks both. C: The doctor has forbidden him alcohol.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that Paul read The Brothers Karamazov or Anna Karenina. A: She thinks he never reads Russian literature. B: She thinks he had time for only one of them. C: So she knows he's read all the classics of Russian literature.",Experimental,original,Other DE,C,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The smoke alarm went off. I bet John didn’t open the window or the door. A: I wonder which. B: So, look, he opened them both. C: Look, both the window and the door are still closed.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that John watched Mission Impossible or James Bond. A: She thinks he only saw one. B: So she knows he's watched all the action movies that have come out since the 1900s. C: She thinks he wouldn’t watch any action movies.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie doesn’t like trees or flowers. A: So she's a huge nature buff. B: I don’t remember which. C: She doesn’t like nature in general.",Experimental,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John went on holiday without his mother or his father. A: So he took them both on vacation because it's their anniversary. B: It's the first time he travels by himself. C: I don’t remember which.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people chose to take Calculus or Statistics. A: I don’t know which. B: So most people take both in school. C: Both of those classes are very unpopular.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: It is really old. B: I don't have enough money to repair it. C: The car radio has been working well.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: The man in the movie was very short. B: His parents are both tall too. C: He is also very muscular.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: He is also very muscular. B: His parents are both tall too. C: The man in the movie was very short.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I played piano growing up. B: I really hated the piano performance. C: The notes sounded very soothing.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John didn’t get the job. He didn’t bring his resume or a list of references. A: He didn’t bring either. B: So he brought his resume, a list of references, and a thoughful present. C: I don’t know which.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Kate used to live without coffee or chocolate. A: So she used to buy a lot of lattes and chocolate chip cookies. B: I don't remember which. C: Now she cannot imagine her life without them.",Experimental,original,Without,A,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: The man is not very tall. B: He is also very muscular. C: His parents are both tall too.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My grandmother made these cookies without rum or cinnamon. A: I can’t remember which. B: Instead of those ingredients she added homemade brandy. C: So the cookies tasted like rum and cinnamon.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John made it through all of college without buying coffee or bread. A: So John lived on toast and black coffee during college. B: I forget which. C: He said they were both a waste of money.",Experimental,created,Without,A,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: It is really old. B: I don't have enough money to repair it. C: The car radio is not broken.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in the house. A: It is not very cold in the house. B: There is a winter storm. C: The heater is broken.",Control,created,Negation,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: She had band practice right before. B: The busses ran late. C: My friend did not come late to class.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Peter told me he needed to travel light. To judge by the small size of his bag, he was travelling without his computer or his movie camera.  A: So his bag had both his computer and movie camera in it when I looked. B: I am sure he was a lot happier without electronic devices. C: I wonder which of the two he decided to give up.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is annoyed. Mary showed up to his birthday party without a present or a card. A: So Mary brought a thoughtful gift and a handwritten card to John's birthday party. B: She forgot them both at home. C: I don’t know which.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The smoke alarm went off. I bet John didn’t open the window or the door. A: I wonder which. B: Look, both the window and the door are still closed. C: So, look, he opened them both.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John went on holiday without his mother or his father. A: So he took them both on vacation because it's their anniversary. B: It's the first time he travels by himself. C: I don’t remember which.",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people took the appetizer or the dessert. A: The main dish was already expensive. B: I don’t remember which. C: So both were gone by the end of the night.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary is sad. She left the restaurant without a sandwich or a cake. A: They were out of both. B: So she spent ten dollars on the sandwich and the cake. C: I don’t know which.",Experimental,created,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people chose to take Calculus or Statistics. A: So most people take both in school. B: Both of those classes are very unpopular. C: I don’t know which.",Experimental,created,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doesn’t like cats or dogs. A: I don’t remember which. B: She had traumatizing experiences with both. C: So she likes all animals.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jane is worried. She got to the airport without her passport or her credit card. A: So she had her passport and her credit card in her bag. B: I don't remember which. C: She forgot all her personal stuff in the cab to the airport!",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: When he was little, John would rarely sleep with his mother or his father. A: I don’t remember which. B: He always preferred to sleep alone. C: So he liked to sleep with one parent on each side of him.",Experimental,original,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people are able to recite the national anthem or the pledge of allegiance. A: I don’t remember which. B: So most can recite both. C: Both are very hard to remember.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: It is really old. B: The car radio has been working well. C: I don't have enough money to repair it.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts that Sue played football or tennis. A: So he thinks she did both. B: He thinks she focused on one of the two. C: He thinks she never did any ball sports.",Experimental,original,Other DE,A,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He was watching a game show. B: My friend was very quiet while watching TV. C: He has not self-awareness.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in this house. A: It is very hot in this house. B: The heater is broken. C: There is a winter storm.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: It is not really windy today. B: The ocean breeze feels nice. C: I heard there was a storm coming.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I remember there was a family conflict. Mary didn’t speak with her mother or her sister. A: She was only talking with her father after that. B: So she talked to them both yesterday. C: I don’t know which.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is upset. Clearly, he didn’t pass the semantics or the syntax exam.  A: I wonder which it was. B: And it wouldn’t be the first time he failed those classes. C: So he got an A on both tests.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I really didn't like the piano performance. B: I played piano growing up. C: The notes sounded very soothing.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He is very stubborn. B: He only likes pizza. C: John's son will eat everything.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: John's son is not a picky eater. B: He is very stubborn. C: He only likes pizza.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Apparently, few people are able to recite back a sequence of twelve letters or twelve numbers. A: The limit is usually ten. B: I don’t remember which. C: So most people are able to recite twelve numbers in a row.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Amy came back from the mall without buying a sweater or perfume A: She said she couldn't find anything she liked there. B: I'm not sure which. C: So just like she always does, Amy came back from the mall with a new sweater and some expensive perfume.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Mary didn’t invite John or Suzi to her birthday party. A: So she invited them both. B: I don’t know which of them. C: She’s upset with both of them and doesn’t want to see them.",Experimental,original,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely goes to the grocery story or the post office. A: I don’t remember which. B: So he often stops by the post office on his way to the grocery store. C: He doesn’t really leave his house.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts Mary knows Spanish or French. A: He thinks she can only speak one. B: He thinks she can only speak English. C: So he has heard her speaking both.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary rarely speaks German or French. A: I don’t remember which. B: She usually only speaks English. C: So she often switches between both.",Experimental,created,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The song sounded very unpleasant. B: The piano had a nice tune. C: It had a nice melody.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary failed the Spanish test. She didn’t study the vocabulary words or the grammar. A: She didn’t study either. B: So she did really well on the grammar questions and the vocabulary words. C: I don’t know which.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It seems John has lived here for years without medical or house insurance. A: Only now has it occurred to him that he needs both of them. B: I don’t remember which one. C: So John spends a lot on medical and house insurance.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jim said he wants to eat less junk food. I guess that's why he came back from the grocery store without cake or soda. A: He's sworn off both. B: I forget which. C: So I saw cake, soda, and chocolate in the grocery bags he brought home.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: I heard there was a storm coming. B: The ocean breeze feels nice. C: The weather is very calm today.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that Paul read The Brothers Karamazov or Anna Karenina. A: So she knows he's read all the classics of Russian literature. B: She thinks he had time for only one of them. C: She thinks he never reads Russian literature.",Experimental,original,Other DE,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely visits his sister or his mother. A: I don’t remember which. B: So he spends as much time as possible with both. C: He says that they make him uncomfortable.",Experimental,original,Other DE,B,B
+"
+From options “A”, “B”, and “C”, which option contradicts the sentence: If I remember correctly, John doesn’t drink wine or beer.  A: The doctor has forbidden him alcohol. B: I don’t know which. C: So he drinks both.",Experimental,original,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The song did not sound very pleasant. B: It had a nice melody. C: The piano had a nice tune.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that John watched Mission Impossible or James Bond. A: She thinks he only saw one. B: She thinks he wouldn’t watch any action movies. C: So she knows he's watched all the action movies that have come out since the 1900s.",Experimental,created,Other DE,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie doesn’t like trees or flowers. A: So she's a huge nature buff. B: She doesn’t like nature in general. C: I don’t remember which.",Experimental,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The delay was really long. B: The train arrived on time. C: There was something on the tracks.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Annie doesn’t like chocolate or pie. A: She dislikes all types of dessert. B: I don’t know which. C: So she loves all types of dessert.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It’s cold in this house. I bet you, John didn’t close the window or the back door.  A: Look, just as I said, both of them are wide open! B: I wonder which one of those two we’ll find open. C: So, look, both the window and back door are closed.",Experimental,original,Negation,C,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie is happy. She left being pulled over without a ticket for speeding or a ticket for a broken tail light. A: So she received two tickets during the stop. B: I don’t know which. C: She’s happy she doesn’t have any tickets to pay.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: The delay was really long. B: There was something on the tracks. C: The train got here on time.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He was watching a game show. B: My friend was not loud while watching TV. C: He has not self-awareness.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: My friend arrived early to class. B: The busses ran late. C: She had band practice right before.",Control,created,Conceptual,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It’s cold in this house. I bet you, John didn’t close the window or the back door.  A: I wonder which one of those two we’ll find open. B: Look, just as I said, both of them are wide open! C: So, look, both the window and back door are closed.",Experimental,original,Negation,C,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I remember there was a family conflict. Mary didn’t speak with her mother or her sister. A: So she talked to them both yesterday. B: She was only talking with her father after that. C: I don’t know which.",Experimental,original,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: When he was little, John would rarely sleep with his mother or his father. A: He always preferred to sleep alone. B: I don’t remember which. C: So he liked to sleep with one parent on each side of him.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts that Sue played football or tennis. A: So he thinks she did both. B: He thinks she focused on one of the two. C: He thinks she never did any ball sports.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people are able to recite the national anthem or the pledge of allegiance. A: Both are very hard to remember. B: I don’t remember which. C: So most can recite both.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is annoyed. Mary showed up to his birthday party without a present or a card. A: I don’t know which. B: So Mary brought a thoughtful gift and a handwritten card to John's birthday party. C: She forgot them both at home.",Experimental,created,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely goes to the grocery story or the post office. A: I don’t remember which. B: So he often stops by the post office on his way to the grocery store. C: He doesn’t really leave his house.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John doubts Mary knows Spanish or French. A: So he has heard her speaking both. B: He thinks she can only speak English. C: He thinks she can only speak one.",Experimental,created,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: The song sounded very unpleasant. B: The piano had a nice tune. C: It had a nice melody.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Apparently, few people are able to recite back a sequence of twelve letters or twelve numbers. A: The limit is usually ten. B: So most people are able to recite twelve numbers in a row. C: I don’t remember which.",Experimental,original,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John is upset. Clearly, he didn’t pass the semantics or the syntax exam.  A: So he got an A on both tests. B: I wonder which it was. C: And it wouldn’t be the first time he failed those classes.",Experimental,original,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people took the appetizer or the dessert. A: So both were gone by the end of the night. B: The main dish was already expensive. C: I don’t remember which.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The smoke alarm went off. I bet John didn’t open the window or the door. A: So, look, he opened them both. B: I wonder which. C: Look, both the window and the door are still closed.",Experimental,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jane is worried. She got to the airport without her passport or her credit card. A: So she had her passport and her credit card in her bag. B: I don't remember which. C: She forgot all her personal stuff in the cab to the airport!",Experimental,original,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: I heard there was a storm coming. B: The weather is very calm today. C: The ocean breeze feels nice.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: My friend did not come late to class. B: The busses ran late. C: She had band practice right before.",Control,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: My friend was very quiet while watching TV. B: He has not self-awareness. C: He was watching a game show.",Control,created,Conceptual,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: He is very stubborn. B: He only likes pizza. C: John's son is not a picky eater.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie is happy. She left being pulled over without a ticket for speeding or a ticket for a broken tail light. A: So she received two tickets during the stop. B: She’s happy she doesn’t have any tickets to pay. C: I don’t know which.",Experimental,created,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John didn’t get the job. He didn’t bring his resume or a list of references. A: I don’t know which. B: He didn’t bring either. C: So he brought his resume, a list of references, and a thoughful present.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Mary didn’t invite John or Suzi to her birthday party. A: So she invited them both. B: I don’t know which of them. C: She’s upset with both of them and doesn’t want to see them.",Experimental,original,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jamie doesn’t like trees or flowers. A: She doesn’t like nature in general. B: I don’t remember which. C: So she's a huge nature buff.",Experimental,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My grandmother made these cookies without rum or cinnamon. A: I can’t remember which. B: Instead of those ingredients she added homemade brandy. C: So the cookies tasted like rum and cinnamon.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: His parents are both tall too. B: The man is not very tall. C: He is also very muscular.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary failed the Spanish test. She didn’t study the vocabulary words or the grammar. A: I don’t know which. B: So she did really well on the grammar questions and the vocabulary words. C: She didn’t study either.",Experimental,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I played piano growing up. B: I really didn't like the piano performance. C: The notes sounded very soothing.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Jim said he wants to eat less junk food. I guess that's why he came back from the grocery store without cake or soda. A: So I saw cake, soda, and chocolate in the grocery bags he brought home. B: He's sworn off both. C: I forget which.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: I don't have enough money to repair it. B: The car radio has been working well. C: It is really old.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that Paul read The Brothers Karamazov or Anna Karenina. A: So she knows he's read all the classics of Russian literature. B: She thinks he had time for only one of them. C: She thinks he never reads Russian literature.",Experimental,original,Other DE,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John's son is a very picky eater. A: John's son will eat everything. B: He is very stubborn. C: He only likes pizza.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doesn’t like cats or dogs. A: I don’t remember which. B: So she likes all animals. C: She had traumatizing experiences with both.",Experimental,original,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary rarely speaks German or French. A: I don’t remember which. B: So she often switches between both. C: She usually only speaks English.",Experimental,created,Other DE,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It seems John has lived here for years without medical or house insurance. A: I don’t remember which one. B: So John spends a lot on medical and house insurance. C: Only now has it occurred to him that he needs both of them.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary is sad. She left the restaurant without a sandwich or a cake. A: They were out of both. B: I don’t know which. C: So she spent ten dollars on the sandwich and the cake.",Experimental,created,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The man in the movie was very tall. A: His parents are both tall too. B: The man in the movie was very short. C: He is also very muscular.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Mary doubts that John watched Mission Impossible or James Bond. A: She thinks he wouldn’t watch any action movies. B: She thinks he only saw one. C: So she knows he's watched all the action movies that have come out since the 1900s.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: If I remember correctly, Annie doesn’t like chocolate or pie. A: So she loves all types of dessert. B: I don’t know which. C: She dislikes all types of dessert.",Experimental,created,Negation,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is really windy today. A: The ocean breeze feels nice. B: I heard there was a storm coming. C: It is not really windy today.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Peter told me he needed to travel light. To judge by the small size of his bag, he was travelling without his computer or his movie camera.  A: I wonder which of the two he decided to give up. B: I am sure he was a lot happier without electronic devices. C: So his bag had both his computer and movie camera in it when I looked.",Experimental,original,Without,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John rarely visits his sister or his mother. A: I don’t remember which. B: He says that they make him uncomfortable. C: So he spends as much time as possible with both.",Experimental,original,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Kate used to live without coffee or chocolate. A: I don't remember which. B: So she used to buy a lot of lattes and chocolate chip cookies. C: Now she cannot imagine her life without them.",Experimental,original,Without,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in this house. A: There is a winter storm. B: The heater is broken. C: It is very hot in this house.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Amy came back from the mall without buying a sweater or perfume A: So just like she always does, Amy came back from the mall with a new sweater and some expensive perfume. B: I'm not sure which. C: She said she couldn't find anything she liked there.",Experimental,created,Without,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The song sounded very pleasant. A: It had a nice melody. B: The song did not sound very pleasant. C: The piano had a nice tune.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: It is very cold in the house. A: The heater is broken. B: It is not very cold in the house. C: There is a winter storm.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: Few people chose to take Calculus or Statistics. A: Both of those classes are very unpopular. B: I don’t know which. C: So most people take both in school.",Experimental,created,Other DE,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: I really liked the piano performance. A: I played piano growing up. B: The notes sounded very soothing. C: I really hated the piano performance.",Control,created,Conceptual,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John went on holiday without his mother or his father. A: So he took them both on vacation because it's their anniversary. B: I don’t remember which. C: It's the first time he travels by himself.",Experimental,original,Without,A,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: There was something on the tracks. B: The delay was really long. C: The train got here on time.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The train didn’t get here on time. A: There was something on the tracks. B: The train arrived on time. C: The delay was really long.",Control,created,Conceptual,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend came late to class today. A: My friend arrived early to class. B: The busses ran late. C: She had band practice right before.",Control,created,Conceptual,A,A
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: The car radio has been broken for a few months. A: I don't have enough money to repair it. B: The car radio is not broken. C: It is really old.",Control,created,Negation,B,B
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: My friend was very while loud watching TV. A: He has not self-awareness. B: He was watching a game show. C: My friend was not loud while watching TV.",Control,created,Negation,C,C
+"
+From choices “A”, “B”, and “C”, which choice contradicts the sentence: John made it through all of college without buying coffee or bread. A: I forget which. B: He said they were both a waste of money. C: So John lived on toast and black coffee during college.",Experimental,created,Without,C,B
+"
+From options “A”, “B”, and “C”, which option contradicts the sentence: If I remember correctly, John doesn’t drink wine or beer.  A: I don’t know which. B: So he drinks both. C: The doctor has forbidden him alcohol.",Experimental,original,Negation,B,B
