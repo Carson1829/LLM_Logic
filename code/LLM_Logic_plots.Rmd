@@ -3,8 +3,8 @@ title: "LLM Logic Scale Task Plots"
 author: "Carson Chiem"
 date: "2024-01-22"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,68 +16,84 @@ knitr::opts_chunk$set(echo = FALSE, comment = NA)
 library(tidyverse)
 dataset = read_csv("C:/CS_programs/Python/LLM_Logic/data/output_responses.csv")
 ```
+```{r}
+# dataset cleaning
+
+# filtering out control trials
+df <- dataset %>%
+  filter(Condition != "Control")
+
+#dataset$Continuation[dataset$Condition == "Control"] = "Control"
+```
+
 
 ```{r}
 # bar plot with created and original study prompts combined
 # finding average responses for each grouping of variables
-avg_responses = dataset %>%
+avg_responses = df %>%
   group_by(Continuation, Type, Condition) %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
 # plotting
-ggplot(avg_responses, aes(x = Type, y = avg_response)) +
-  geom_bar(aes(fill = ifelse(Condition == "Experimental", Continuation, "Control")), stat = "identity", position = "dodge") +
-  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd, fill = Continuation), position = position_dodge(0.9), width = 0.2) +
+ggplot(avg_responses, aes(x = Type, y = avg_response, fill = Continuation)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), position = position_dodge(0.9), width = 0.2) +
+  geom_text(aes(label = round(avg_response, 2)), position = position_dodge(width = 0.9), vjust = 11, size = 2.5) +
   labs(title = "Average Response by Type and Continuation",
        x = "Type",
        y = "Average Response",
        fill = "Continuation") +
+  scale_y_continuous(limits = c(0, 7), breaks = seq(1, 7, 1), labels = seq(1, 7, 1)) + 
   theme_minimal()
 ```
 
 ```{r}
 # bar plot with separate graphs for original and created prompts
 # finding average responses for each grouping of variables including study
-avg_responses = dataset %>%
+avg_responses = df %>%
   group_by(Continuation, Type, Condition, Study) %>%
   summarise(avg_response = mean(Response), sd = sd(Response, na.rm = TRUE))
 
 # plotting
-ggplot(avg_responses, aes(x = Type, y = avg_response)) +
-  geom_bar(aes(fill = ifelse(Condition == "Experimental", Continuation, "Control")), stat = "identity", position = "dodge") +
+ggplot(avg_responses, aes(x = Type, y = avg_response, fill = Continuation)) +
+  geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ Study, drop = TRUE, scales = "free_x") +
-  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd, fill = Continuation), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
+  geom_errorbar(aes(ymin = avg_response - sd, ymax = avg_response + sd), na.rm = TRUE, position = position_dodge(0.9), width = 0.2) + 
+  geom_text(aes(label = round(avg_response, 2)), position = position_dodge(width = 0.9), vjust = 11, size = 2.5) +
   labs(title = "Average Response by Type and Continuation, separated by study",
        x = "Type",
        y = "Average Response",
        fill = "Continuation") +
   theme_minimal() +
+  scale_y_continuous(limits = c(0, 7), breaks = seq(1, 7, 1), labels = seq(1, 7, 1)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
 ```{r}
 # Dot plot
 # plotting 
-ggplot(dataset, aes(x = Type, y = Response)) +
-  geom_dotplot(aes(fill = ifelse(Condition == "Experimental", Continuation, "Control")), binaxis = "y", stackdir = "center", position = "dodge", dotsize=.2, binwidth = .1) +
+ggplot(df, aes(x = Type, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.9, binwidth = .1) +
   labs(title = "Responses by Type and Continuation",
        x = "Type",
-       y = "Response rating",
+       y = "Response Rating on a 1-7 Likert Scale",
        fill = "Continuation") +
-  theme_minimal()
+  theme_minimal() +
+  scale_y_continuous(limits = c(1, 7), breaks = seq(1, 7, 1), labels = seq(1, 7, 1))
 ```
 
 ```{r}
-# Violin plot
+# Dot plot
 # plotting
-ggplot(dataset, aes(x = Type, y = Response)) +
-  geom_violin(aes(fill = ifelse(Condition == "Experimental", Continuation, "Control")), binaxis = "y", stackdir = "center", position = "dodge", dotsize=.3, binwidth = .1, jitter = 0.2) +
+ggplot(df, aes(x = Type, y = Response, fill = Continuation)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", position = "dodge", dotsize=.7, binwidth = .1) +
   facet_wrap(~ Study, drop = TRUE, scales = "free_x") +
   labs(title = "Responses by Type and Continuation, separated by study",
        x = "Type",
-       y = "Response rating",
+       y = "Response Rating on a 1-7 Likert Scale",
        fill = "Continuation") +
   theme_minimal() +
+  scale_y_continuous(limits = c(1, 7), breaks = seq(1, 7, 1), labels = seq(1, 7, 1)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 ## R Appendix
