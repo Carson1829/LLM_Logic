@@ -9,14 +9,88 @@ output: word_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r test_all_data}
+library(tidyverse)
+
+file_paths <- c(
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_1.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_2.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_3.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_4.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_5.csv"
+)
+
+# Process each file
+test_all_data <- purrr::map_dfr(1:length(file_paths), function(i) {
+  read_csv(file_paths[i]) %>%
+    filter(Type != "control") %>%  # Remove control rows
+    group_by(Instructions) %>%
+    mutate(
+      row_number_within_instruction = row_number(),
+      proposition = ceiling(row_number_within_instruction / 11),
+      Trial = as.factor(i)
+    ) %>%
+    ungroup() %>%
+    select(-row_number_within_instruction)  # Clean up temporary column
+})
+
+test_all_data$Contradiction <- as.factor(test_all_data$Contradiction)
+test_all_data$Response <- as.factor(test_all_data$Response)
+test_all_data$Connective <- as.factor(test_all_data$Connective)
+test_all_data$Instructions <- as.factor(test_all_data$Instructions)
+
+test_all_data <- test_all_data %>%
+  # Standardize the Response column
+  mutate(Response = case_when(
+    str_detect(Response, regex("\\bYes\\b", ignore_case = TRUE)) ~ "Yes",
+    str_detect(Response, regex("\\bNo\\b", ignore_case = TRUE)) ~ "No",
+    TRUE ~ Response  
+  )) %>%
+  # Checking if response is correct
+  mutate(Correct = case_when(
+    # Logic for Instructions == 1
+    Instructions == 1 & Contradiction == 1 & Response == "Yes" ~ 1,
+    Instructions == 1 & Contradiction == 0 & Response == "No" ~ 1,
+    
+    # Opposite logic for Instructions == 2 or 3
+    (Instructions == 2 | Instructions == 3) & Contradiction == 1 & Response == "No" ~ 1,
+    (Instructions == 2 | Instructions == 3) & Contradiction == 0 & Response == "Yes" ~ 1,
+    
+    # Incorrect otherwise
+    TRUE ~ 0
+  ))
+
+colnames(test_all_data)[colnames(test_all_data) == 'Original order'] <- 'Prompt_ID'
+```
 ```{r}
+test_all_data_3B <- test_all_data
+
+test_all_data_1B$Model <- "Llama 3.2 1B"
+test_all_data_3B$Model <- "Llama 3.2 3B"
+test_all_data_8B$Model <- "Llama 3.1 8B"
+
+#all_data_3B$Trial <- all_data_3B$Trial + 5
+#all_data_8B$Trial <- all_data_8B$Trial + 10
+
+
+# Combine all dataframes into one
+test_all_data_full <- bind_rows(
+  test_all_data_1B,
+  test_all_data_3B,
+  test_all_data_8B
+)
+```
+
+```{r all_data}
 library(tidyverse)
 # Importing and combining all CSV files
-file_paths <- c("output_responses_llama_3.2_3b_prompting_exp1_1.csv",
-                "output_responses_llama_3.2_3b_prompting_exp1_2.csv",
-                "output_responses_llama_3.2_3b_prompting_exp1_3.csv",
-                "output_responses_llama_3.2_3b_prompting_exp1_4.csv",
-                "output_responses_llama_3.2_3b_prompting_exp1_5.csv")
+file_paths <- c(
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_1.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_2.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_3.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_4.csv",
+  "output_data/output_responses_llama_3.2_3b_prompting_exp1_5.csv"
+)
 
 # Add a numeric 'Trial' column (1 to 5) to identify each dataset
 all_data <- purrr::map_dfr(1:length(file_paths), function(i) {
@@ -25,13 +99,13 @@ all_data <- purrr::map_dfr(1:length(file_paths), function(i) {
 })
 
 # Convert relevant columns to factors
-all_data$Contradiction <- as.factor(all_data$Contradiction)
+#all_data$Contradiction <- as.factor(all_data$Contradiction)
 all_data$Response <- as.factor(all_data$Response)
 all_data$Connective <- as.factor(all_data$Connective)
 all_data$Instructions <- as.factor(all_data$Instructions)
 
 ```
-```{r}
+```{r standardizing correct responses}
 all_data <- all_data %>%
   # Standardize the Response column
   mutate(Response = case_when(
@@ -52,17 +126,93 @@ all_data <- all_data %>%
     # Incorrect otherwise
     TRUE ~ 0
   ))
+
+colnames(all_data)[colnames(all_data) == 'Original order'] <- 'Prompt_ID'
+contradiction_connectives <- c("and", "if", "so", "therefore", "but", "when", "although")
+
+all_data <- all_data %>%
+  mutate(
+    is_con_con = ifelse(Connective %in% contradiction_connectives, 1, 0)
+  )
 ```
 
-```{r}
+```{r accuracy all data}
+accuracy_all_data <- all_data %>%
+  group_by(Trial, Connective, Instructions, Type) %>%
+  summarise(
+    Total = n(),
+    Correct = sum(Correct),
+    Accuracy = round((Correct / Total) * 100, 2),
+    .groups = 'drop'
+  )
+
+print(accuracy_all_data)
+```
+
+```{r splitting data}
 # Split data into experimental and control subsets
 experimental_data <- all_data %>% filter(Type == "experimental")
 control_data <- all_data %>% filter(Type == "control")
 ```
 
-```{r}
-# Accuracy per trial, connective, and instruction type (Experimental)
-accuracy_exp_by_trial <- experimental_data %>%
+```{r plotting}
+all_data_8B <- all_data
+all_data_8B <- all_data_8B %>%
+  mutate(
+    Contradiction = factor(Contradiction, levels = c(1, 0), labels = c(" Contradictory", "Non-Contradictory")),
+
+  )
+accuracy_by_trial_3b_test <- all_data_8B%>%
+  group_by(Trial, Contradiction, Instructions) %>%
+  summarise(
+    Total = n(),
+    Correct = sum(Correct),
+    Accuracy = round((Correct / Total) * 100, 2),
+    .groups = 'drop'
+  )
+
+accuracy_summary_test <- accuracy_by_trial_3b_test %>%
+  group_by(Contradiction, Instructions) %>%
+  summarise(
+    MeanAccuracy = mean(Accuracy),
+    SE = sd(Accuracy) / sqrt(n()), 
+    .groups = 'drop'
+  )
+
+print(accuracy_summary_test)
+
+# Plot
+ggplot(accuracy_summary_test, aes(x = Contradiction, y = MeanAccuracy, fill = Instructions)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, color = "black", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE),
+                width = 0.2,
+                position = position_dodge(0.7),
+                color = "black") +
+  labs(
+    x = "Connective Category",
+    y = "Mean Accuracy",
+    fill = "Instruction Type"
+  ) +
+  scale_y_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 20),
+      expand = c(0, 0)
+    ) +
+  theme_minimal(base_size = 21) +
+  theme(
+    strip.text = element_text(size = 14, face = "bold"),
+    legend.position = "top",
+    panel.background = element_rect(fill = "white", color = "white"),
+    plot.background = element_rect(fill = "white", color = "white"),
+    panel.grid.major.x = element_blank(),
+    axis.title.y = element_blank()
+  )
+
+ggsave("8b_plot_exp.png", dpi = 300, width = 9, height = 7)
+```
+
+```{r accuracy by trial experimental and control}
+accuracy_exp_by_trial_3b <- experimental_data %>%
   group_by(Trial, Connective, Instructions) %>%
   summarise(
     Total = n(),
@@ -71,34 +221,455 @@ accuracy_exp_by_trial <- experimental_data %>%
     .groups = 'drop'
   )
 
-print(accuracy_exp_by_trial)
-
-# Average accuracy and variability across trials (Experimental)
-accuracy_exp_summary <- accuracy_exp_by_trial %>%
-  group_by(Connective, Instructions) %>%
+accuracy_con_by_trial_3b <- control_data %>%
+  group_by(Trial, Connective, Instructions) %>%
   summarise(
-    MeanAccuracy = mean(Accuracy),
-    SE = sd(Accuracy) / sqrt(n()), 
+    Total = n(),
+    Correct = sum(Correct),
+    Accuracy = round((Correct / Total) * 100, 2),
     .groups = 'drop'
   )
+```
 
-print(accuracy_exp_summary)
+
+
+```{r}
+all_data$is_con_con <- as.factor(all_data$is_con_con)
+all_data$Trial <- as.numeric(all_data$Trial)
+
+all_data_8B <- all_data
+
+all_data_1B$Model <- "Llama 3.2 1B"
+all_data_3B$Model <- "Llama 3.2 3B"
+all_data_8B$Model <- "Llama 3.1 8B"
+
+#all_data_3B$Trial <- all_data_3B$Trial + 5
+#all_data_8B$Trial <- all_data_8B$Trial + 10
+
+
+# Combine all dataframes into one
+all_data_full <- bind_rows(
+  all_data_1B,
+  all_data_3B,
+  all_data_8B
+)
 ```
 
 ```{r}
-# Plot mean accurcy with error bars for each connective and instruction type across trials
-ggplot(accuracy_exp_summary, aes(x = Connective, y = MeanAccuracy, fill = factor(Instructions))) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black") +  
-  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE), 
-                width = 0.2, 
-                position = position_dodge(0.8)) +
-  labs(
-    title = "Mean Accuracy by Connective and Instruction Type with Error Bars",
-    x = "Connective",
-    y = "Mean Accuracy (%)",
-    fill = "Instruction Type"  
-  ) +
-  theme_minimal() +
-  theme(legend.position = "top")  
+
+test_all_data_full$Prompt_ID <- as.numeric(test_all_data_full$Prompt_ID)
+test_all_data_full <- test_all_data_full %>%
+  mutate(
+    Prompt_ID = case_when(
+      Instructions == "2" ~ Prompt_ID + 386,
+      Instructions == "3" ~ Prompt_ID + 772,
+      TRUE ~ Prompt_ID
+    )
+  )
 ```
 
+```{r}
+test_all_data_full_1 <- test_all_data_full
+```
+
+```{r stats tests glmm all model CORRECT ONE}
+library(lme4)
+library(car)
+
+test_all_data_full$Prompt_ID <- as.factor(test_all_data_full$Prompt_ID)
+test_all_data_full$proposition <- as.factor(test_all_data_full$proposition)
+
+mixed_model_all_exp1 <- glmer(
+  Correct ~ Contradiction * Instructions * Model + (1 | proposition/Prompt_ID),
+  data = test_all_data_full,
+  family = binomial,
+  control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))
+)
+
+# Display summary with p-values
+summary(mixed_model_all_exp1)
+
+# Perform a Type III ANOVA
+anova_results <- Anova(mixed_model_all_exp1, type = "3")
+
+# View results
+print(anova_results)
+```
+
+```{r emmeans}
+
+library(emmeans)
+
+# Get estimated marginal means for each combination
+em <- emmeans(mixed_model_all_exp1, ~ Contradiction | Model * Instructions, type = "response")
+
+# Compare contradiction vs non-contradiction within each model & instruction
+contrast_results <- contrast(em, method = "revpairwise", by = c("Model", "Instructions"))
+
+# View the results
+summary(contrast_results, infer = TRUE)
+```
+
+```{r stats test promptID does not include isntructions}
+test_all_data_full$Prompt_ID <- as.factor(test_all_data_full$Prompt_ID)
+test_all_data_full$proposition <- as.factor(test_all_data_full$proposition)
+
+mixed_model_all <- glmer(
+  Correct ~ Contradiction * Instructions * Model + (1 | proposition),
+  data = test_all_data_full,
+  family = binomial,
+  control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))
+)
+
+# Display summary with p-values
+summary(mixed_model_all)
+
+# Perform a Type III ANOVA
+anova_results <- Anova(mixed_model_all, type = "3")
+
+# View results
+print(anova_results)
+```
+
+```{r}
+# Plot mean accuracy with error bars for each connective and instruction type
+plot_exp <- ggplot(accuracy_exp_summary, aes(x = Connective, y = MeanAccuracy, fill = factor(Instructions))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", linewidth = 0.3) +  
+  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE), 
+                width = 0.2, 
+                position = position_dodge(0.8), 
+                color = "black", linewidth = 0.3) +
+  labs(
+    title = "Mean Accuracy by Connective and Instruction Type for Experimental Trials",
+    x = "Connective",
+    y = "Mean Accuracy (%)",
+    fill = "Instruction Type"
+  ) +
+  scale_y_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 20),
+      expand = c(0, 0)
+    ) +
+  scale_fill_manual(values = c("#619CFF", "#F8766D", "#00BA38", "#F564E3")) +  # Custom color palette
+  theme_minimal(base_size = 14) +  # Adjust base font size for better readability
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5),  # Centered, bold title
+    panel.background = element_rect(fill = "white", color = "white"),
+    plot.background = element_rect(fill = "white", color = "white"),
+    axis.title.x = element_text(face = "bold", size = 14),             # Bold x-axis title
+    axis.title.y = element_text(face = "bold", size = 14),             # Bold y-axis title
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),      # Angled x-axis labels for readability
+    axis.text.y = element_text(size = 12),                             # Increase y-axis label size
+    legend.position = "top",                                           # Move legend to top
+    legend.title = element_text(face = "bold", size = 12),             # Bold legend title
+    legend.text = element_text(size = 12),                             # Adjust legend text size
+    panel.grid.major = element_line(color = "grey85", linewidth = 0.3),# Subtle gridlines for better readability
+    panel.grid.minor = element_blank()                                 # Remove minor gridlines
+  ) +
+  coord_cartesian(ylim = c(0, 100))  # Adjust y-axis limits to fit the data
+
+# Plot mean accuracy with error bars for each connective and instruction type
+plot_con <- ggplot(accuracy_con_summary, aes(x = Connective, y = MeanAccuracy, fill = factor(Instructions))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", linewidth = 0.3) +  
+  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE), 
+                width = 0.2, 
+                position = position_dodge(0.8), 
+                color = "black", linewidth = 0.3) +
+  labs(
+    title = "Mean Accuracy by Connective and Instruction Type for Control Trials",
+    x = "Connective",
+    y = "Mean Accuracy (%)",
+    fill = "Instruction Type"
+  ) +
+  scale_y_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 20),
+      expand = c(0, 0)
+    ) +
+  scale_fill_manual(values = c("#619CFF", "#F8766D", "#00BA38", "#F564E3")) +  # Custom color palette
+  theme_minimal(base_size = 14) +  # Adjust base font size for better readability
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+    panel.background = element_rect(fill = "white", color = "white"),
+    plot.background = element_rect(fill = "white", color = "white"),
+    axis.title.x = element_text(face = "bold", size = 14),
+    axis.title.y = element_text(face = "bold", size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    legend.position = "top",
+    legend.title = element_text(face = "bold", size = 12),
+    legend.text = element_text(size = 12),
+    panel.grid.major = element_line(color = "grey85", linewidth = 0.3),
+    panel.grid.minor = element_blank()
+  ) +
+  coord_cartesian(ylim = c(0, 100)) 
+
+
+plot_exp
+plot_con
+```
+
+```{r}
+ggsave("3b_plot_con.png",plot = plot_con, dpi = 300, width = 9, height = 6)
+ggsave("3b_plot_exp.png",plot = plot_exp, dpi = 300, width = 9, height = 6)
+```
+
+```{r plotting contradictory and noncontradictory}
+library("patchwork")
+# Filter the accuracy_exp_summary into contradictory and non-contradictory subsets
+contradictory_data <- accuracy_exp_summary %>%
+  filter(Connective %in% c("although", "and", "but", "if", "so", "therefore", "when"))
+
+non_contradictory_data <- accuracy_exp_summary %>%
+  filter(!(Connective %in% c("although", "and", "but", "if", "so", "therefore", "when")))
+# Enhanced plot for contradictory data
+plot_contradictory <- ggplot(contradictory_data, aes(x = Connective, y = MeanAccuracy, fill = factor(Instructions))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE),
+                width = 0.2,
+                position = position_dodge(0.8),
+                color = "black") +
+  labs(
+    subtitle = "Contradictory Connectives",
+    x = "Connective",
+    fill = "Instruction Type"
+  ) +
+  scale_y_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 20),
+      expand = c(0, 0)
+    ) +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(size = 20),
+    axis.title.y=element_blank(),
+    axis.text.x = element_text(size = 20, angle = 45, hjust = 1),
+    axis.text.y = element_text(size = 20)
+  )
+
+# Enhanced plot for non-contradictory data
+plot_non_contradictory <- ggplot(non_contradictory_data, aes(x = Connective, y = MeanAccuracy, fill = factor(Instructions))) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", linewidth = 0.3) +
+  geom_errorbar(aes(ymin = MeanAccuracy - SE, ymax = MeanAccuracy + SE),
+                width = 0.2,
+                position = position_dodge(0.8),
+                color = "black") +
+  labs(
+    subtitle = "Non-Contradictory Connectives",
+    x = "Connective",
+    fill = "Instruction Type"
+  ) +
+  scale_y_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 20),
+      expand = c(0, 0)
+    ) +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(size = 20),
+    axis.title.y=element_blank(),
+    axis.text.x = element_text(size = 20, angle = 45, hjust = 1),
+    axis.text.y = element_text(size = 20)
+  )
+
+# Combine plots horizontally with shared legend
+final_plot <- plot_contradictory + plot_non_contradictory +
+  plot_layout(guides = "collect") & 
+  theme(
+    legend.position = "top",  # Position legend at the bottom
+    legend.direction = "horizontal",  # Set legend direction to horizontal
+    legend.title = element_text(size = 20),  # Style legend title
+    legend.text = element_text(size = 20),  # Style legend text
+    plot.subtitle = element_text(size = 21, face = "italic", hjust = 0.5),  # Style subtitles
+    plot.margin = margin(10, 10, 10, 10)  # Adjust margin for better layout
+  )
+
+# Print the final plot
+print(final_plot)
+ggsave("3b_plot.png",dpi = 300, width = 9, height = 6)
+```
+
+```{r combing data for plot}
+
+accuracy_exp_by_trial_1b$Source <- "Llama 3.2 1B"
+accuracy_exp_by_trial_3b$Source <- "Llama 3.2 3B"
+accuracy_exp_by_trial_8b$Source <- "Llama 3.1 8B"
+accuracy_con_by_trial_1b$Source <- "Llama 3.2 1B"
+accuracy_con_by_trial_3b$Source <- "Llama 3.2 3B"
+accuracy_con_by_trial_8b$Source <- "Llama 3.1 8B"
+
+
+# Combine all dataframes into one
+combined_data_1 <- bind_rows(
+  accuracy_exp_by_trial_1b,
+  accuracy_exp_by_trial_3b,
+  accuracy_exp_by_trial_8b,
+)
+
+# Categorize connectives as Contradictory or Non-Contradictory
+combined_data_1$Category <- ifelse(
+  combined_data_1$Connective %in% c("although", "and", "but", "if", "so", "therefore", "when"), 
+  "Contradictory", 
+  "Non-Contradictory"
+)
+
+combined_data_2 <- bind_rows(
+  accuracy_con_by_trial_1b,
+  accuracy_con_by_trial_3b,
+  accuracy_con_by_trial_8b,
+)
+
+combined_data_2$Category <- "Control"
+
+combined_data_full <- bind_rows(
+  combined_data_1,
+  combined_data_2
+)
+```
+
+```{r plot for contradiction/noncontradiction/control for models, no instructions}
+
+
+# Convert the 'Source' variable to a factor with the desired order
+#combined_data_full$Source <- factor(combined_data_full$Source, levels = c("Llama 3.2 1B", "Llama 3.2 3B", "Llama 3.1 8B"))
+#combined_data_full$Category <- factor(combined_data_full$Category, levels = c("Contradictory", "Non-Contradictory", "Control"))
+
+# Calculate means and standard errors for each Source and Category
+category_means <- combined_data_full %>%
+  group_by(Source, Category) %>%
+  summarise(
+    Mean_Accuracy = mean(Accuracy, na.rm = TRUE) / 100,
+    SE = sd(Accuracy, na.rm = TRUE) / sqrt(n()) / 100
+  )
+
+# Create the plot
+category_plot <- ggplot(category_means, aes(x = Source, y = Mean_Accuracy, fill = Category)) +
+  geom_bar(stat = "identity", position = position_dodge(0.7), width = 0.6, color = "black") +
+  geom_errorbar(
+    aes(ymin = Mean_Accuracy - SE, ymax = Mean_Accuracy + SE),
+    position = position_dodge(0.7), width = 0.3, color = "black"
+  ) +
+  labs(
+    x = "Model",
+    y = "Mean Accuracy",
+    fill = "Category"
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .2), expand = c(0, 0)) + # Set y-axis limits from 0 to 100
+  theme(
+    legend.position = "top",
+    legend.title = element_blank(),
+    panel.grid.major = element_line(color = "gray80"),
+    panel.grid.minor = element_blank(),
+    axis.title.y=element_blank(),
+  )
+
+# Display the plot
+category_plot
+
+ggsave("accbymodelandcat_plot.png", dpi = 300, width = 9, height = 7)
+```
+
+```{r plot for contradiction/noncontradiction/control for models with instructions}
+#combined_data_full_exp <- subset(combined_data_full, Category!="Control")
+#combined_data_full_exp <- combined_data_full_exp %>%
+#    mutate(
+#      Category = ifelse(Category == "Contradictory", "Cont", "Non-Cont") 
+#      )
+
+# Calculate means and standard errors for each Source and Category
+category_means <- combined_data_full_exp %>%
+  group_by(Source, Category, Instructions) %>%
+  summarise(
+    Mean_Accuracy = mean(Accuracy, na.rm = TRUE) / 100,
+    SE = sd(Accuracy, na.rm = TRUE) / sqrt(n()) / 100
+  )
+
+# Create the plot
+category_plot <- ggplot(category_means, aes(x = Category, y = Mean_Accuracy, fill = Instructions)) +
+  facet_wrap(~Source) +
+  geom_col(position = position_dodge(0.8), width = 0.8, color = "black") +
+  geom_errorbar(
+    aes(ymin = Mean_Accuracy - SE, ymax = Mean_Accuracy + SE),
+    position = position_dodge(0.8), width = 0.3, color = "black"
+  ) +
+  labs(
+    x = "Connective Category",
+    y = "Mean Accuracy",
+    fill = "Instruction Type"
+  ) +
+  theme_minimal(base_size = 24) +
+  scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = .2), expand = c(0, 0)) + # Set y-axis limits from 0 to 1.0
+  theme(
+    legend.position = "top",
+    legend.text = element_text(size = 20),
+    panel.grid.major = element_line(color = "gray80"),
+    panel.grid.minor = element_blank(),
+    axis.title.x = element_text(size = 21),
+    axis.title.y=element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 20),
+    axis.text.y = element_text(size = 20)
+  )
+
+# Display the plot
+category_plot
+
+ggsave("full_plot_exp1.png",dpi = 300, width = 9, height = 7)
+```
+
+```{r}
+# Kruskal-Wallis test for Source
+kruskal.test(Accuracy ~ Source, data = combined_data)
+
+# Kruskal-Wallis test for Category
+kruskal.test(Accuracy ~ Category, data = combined_data)
+
+# Pairwise Wilcoxon tests with Bonferroni correction
+pairwise.wilcox.test(combined_data$Accuracy, combined_data$Source, p.adjust.method = "bonferroni")
+pairwise.wilcox.test(combined_data$Accuracy, combined_data$Category, p.adjust.method = "bonferroni")
+```
+
+```{r GLMM test single model}
+# Categorize connectives as Contradictory or Non-Contradictory
+accuracy_exp_by_trial_8b$Category <- ifelse(
+  accuracy_exp_by_trial_8b$Connective %in% c("although", "and", "but", "if", "so", "therefore", "when"), 
+  "Contradictory", 
+  "Non-Contradictory"
+)
+
+# Fit the mixed model with Trial as a random effect
+mixed_model_1b <- lmer(Accuracy ~ Category * Instructions + (1|Trial), data = accuracy_exp_by_trial_1b)
+
+# Display summary with p-values
+summary(mixed_model_1b)
+
+# Perform a Type III ANOVA
+anova_results_1b <- anova(mixed_model_1b, type = "III")
+
+# View results
+print(anova_results_1b)
+
+# Fit the mixed model with Trial as a random effect
+mixed_model_3b <- lmer(Accuracy ~ Category * Instructions + (1|Trial), data = accuracy_exp_by_trial_3b)
+
+# Display summary with p-values
+summary(mixed_model_3b)
+
+# Perform a Type III ANOVA
+anova_results_3b <- anova(mixed_model_3b, type = "III")
+
+# View results
+print(anova_results_3b)
+
+# Fit the mixed model with Trial as a random effect
+mixed_model_8b <- lmer(Accuracy ~ Category * Instructions + (1|Trial), data = accuracy_exp_by_trial_8b)
+
+# Display summary with p-values
+summary(mixed_model_8b)
+
+# Perform a Type III ANOVA
+anova_results_8b <- anova(mixed_model_8b, type = "III")
+
+# View results
+print(anova_results_8b)
+```
