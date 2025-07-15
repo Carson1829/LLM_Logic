@@ -1,0 +1,552 @@
+---
+title: "LLM_exp2"
+author: "Carson Chiem"
+date: "2025-02-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r combining dataframes}
+library(tidyverse)
+
+# Get a list of CSV files in the directory
+csv_files <- list.files(pattern = "*.csv", full.names = TRUE)
+
+# Function to extract task and model from the filename
+extract_info <- function(filename) {
+  # Remove directory path
+  base_name <- basename(filename)
+  
+  # Remove "_ch" and file extension
+  base_name <- gsub("_ch|\\.csv", "", base_name)
+  
+  # Split filename into components
+  parts <- unlist(strsplit(base_name, "_"))
+  
+  # Extract task and model (assuming consistent naming)
+  task <- paste(parts[1], sep = "_")
+  model <- paste(parts[3], parts[4], sep = "_")
+  
+  return(list(task = task, model = model))
+}
+
+custom_model_names <- c(
+  "L3.2_1B" = "Llama 3.2 1B",
+  "L3.2_3B" = "Llama 3.2 3B",
+  "L3.1_8B" = "Llama 3.1 8B",
+  "gpt_3.5" = "GPT-3.5 Turbo",
+  "gpt_4o-mini" = "GPT-4o mini",
+  "gpt_4o" = "GPT-4o"
+)
+
+# Read and combine all CSV files
+combined_data <- bind_rows(lapply(csv_files, function(file) {
+  df <- read.csv(file)
+  info <- extract_info(file)
+  df$task <- info$task
+  df$model <- info$model
+  
+  df$model <- custom_model_names[df$model]
+  
+  return(df)
+}))
+
+names(combined_data)[names(combined_data) == 'task'] <- 'Task'
+names(combined_data)[names(combined_data) == 'model'] <- 'Model'
+```
+```{r}
+custom_model_names <- c(
+  "L3.2_1B" = "Llama 3.2 1B",
+  "L3.2_3B" = "Llama 3.2 3B",
+  "L3.1_8B" = "Llama 3.1 8B",
+  "gpt_3.5" = "GPT-3.5 Turbo",
+  "gpt_4o-mini" = "GPT-4o mini",
+  "gpt_4o" = "GPT-4o"
+)
+
+# Read and combine all CSV files
+combined_data <- bind_rows(lapply(csv_files, function(file) {
+  df <- read.csv(file)
+  info <- extract_info(file)
+  df$task <- info$task
+  df$model <- info$model
+  
+  df$model <- recode(df$model, !!!custom_model_names)
+  
+  return(df)
+}))
+
+names(combined_data)[names(combined_data) == 'task'] <- 'Task'
+names(combined_data)[names(combined_data) == 'model'] <- 'Model'
+```
+
+```{r as factor}
+combined_data <- combined_data %>%
+  mutate(
+    Task = as.factor(Task),
+    Type = as.factor(Type),
+    Category = as.factor(Category),
+    Model = as.factor(Model),
+    Correct = as.numeric(Correct)
+  )
+```
+
+```{r accuracies by task, type and model}
+# Accuracy by Task
+accuracy_by_task <- combined_data %>%
+  group_by(Task) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total) * 100
+  ) %>%
+  ungroup()
+
+print("Accuracy by Task:")
+print(accuracy_by_task)
+
+# Accuracy by Type
+accuracy_by_type <- combined_data %>%
+  group_by(Type) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total)
+  ) %>%
+  ungroup()
+
+print("Accuracy by Type:")
+print(accuracy_by_type)
+
+# Accuracy by Category
+accuracy_by_category <- combined_data %>%
+  group_by(Category) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total) * 100
+  ) %>%
+  ungroup()
+
+print("Accuracy by Category:")
+print(accuracy_by_category)
+
+# Accuracy by Model
+accuracy_by_model <- combined_data %>%
+  group_by(Model) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total) * 100
+  ) %>%
+  ungroup()
+
+print("Accuracy by Model:")
+print(accuracy_by_model)
+
+```
+
+```{r simple plots for accuracy for variables}
+
+# Function to create bar plots for accuracy
+plot_accuracy <- function(data, group_var, title) {
+  summary_data <- combined_data %>%
+    group_by(.data[[group_var]]) %>%
+    summarise(
+      total = n(),
+      correct = sum(Correct),
+      accuracy = (correct / total) * 100
+    ) %>%
+    ungroup()
+  
+  ggplot(summary_data, aes(x = .data[[group_var]], y = accuracy, fill = .data[[group_var]])) +
+    geom_bar(stat = "identity", color = "black") +
+    labs(title = title, x = group_var, y = "Accuracy (%)") +
+    theme_minimal() +
+    theme(legend.position = "none")
+}
+
+# Plot accuracy by Task
+plot_accuracy(combined_data, "Task", "Accuracy by Task")
+
+# Plot accuracy by Type
+plot_accuracy(combined_data, "Type", "Accuracy by Type")
+
+# Plot accuracy by Category
+plot_accuracy(combined_data, "Category", "Accuracy by Category")
+
+# Plot accuracy by Model
+plot_accuracy(combined_data, "Model", "Accuracy by Model")
+
+```
+```{r}
+# Function to create bar plots for accuracy by two variables
+plot_accuracy <- function(data, group_var1, group_var2, title) {
+  summary_data <- data %>%
+    group_by(.data[[group_var1]], .data[[group_var2]]) %>%
+    summarise(
+      total = n(),
+      correct = sum(Correct),
+      accuracy = (correct / total) * 100
+    ) %>%
+    ungroup()
+  
+  ggplot(summary_data, aes(x = .data[[group_var1]], y = accuracy, fill = .data[[group_var2]])) +
+    geom_bar(stat = "identity", position = position_dodge(width = 0.7), color = "black", width = 0.7) +
+    labs(title = title, x = group_var1, y = "Accuracy (%)", fill = group_var2) +
+    theme_minimal() +
+    theme(legend.position = "right")  # Adjust the legend position for clarity
+}
+
+# Plot accuracy by Task and Type
+plot_accuracy(combined_data, "task", "Type", "Accuracy by Task and Type")
+
+
+```
+
+```{r general plotting function, split by type}
+
+plot_accuracy <- function(data, group_var1, group_var2, title) {
+  # Define custom color palette for "Type"
+  type_colors <- c(
+    "simple_pos"       = "#a6cee3",
+    "simple_neg"       = "#1f78b4",
+    "simple_pos_dis"   = "#b2df8a",
+    "comp_pos_dis"     = "#33a02c",
+    "simple_neg_dis"   = "#fb9a99",
+    "comp_neg_dis"     = "#e31a1c",
+    "simple_neg_conj"  = "#fdbf6f",
+    "inc_dis"          = "#ff7f00",
+    "ex_dis"           = "#cab2d6",
+    "comp_neg"         = "#6a3d9a",
+    "simple_pos_conj"  = "#ffff99",
+    "comp_neg_conj"    = "#b15928"
+  )
+
+  # Apply factor levels to ensure consistent order if "Type" is used
+  if ("Type" %in% c(group_var1, group_var2)) {
+    type_levels <- names(type_colors)
+    if (group_var1 == "Type") {
+      data[[group_var1]] <- factor(data[[group_var1]], levels = type_levels)
+    }
+    if (group_var2 == "Type") {
+      data[[group_var2]] <- factor(data[[group_var2]], levels = type_levels)
+    }
+  }
+  
+  if (group_var1 == "Task") {
+    data[[group_var1]] <- factor(str_to_title(data[[group_var1]]), levels = c("Digit", "Letter", "Word", "Emoji"))
+  }
+  
+  summary_data <- data %>%
+    group_by(.data[[group_var1]], .data[[group_var2]]) %>%
+    summarise(
+      total = n(),
+      correct = sum(Correct),
+      accuracy = (correct / total),
+      .groups = "drop"
+    )
+
+  ggplot(summary_data, aes(x = .data[[group_var1]], y = accuracy, fill = .data[[group_var2]])) +
+    geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", width = 0.8) +
+    labs(subtitle = title, x = group_var1, y = "Accuracy (%)", fill = group_var2) +
+    scale_y_continuous(
+      limits = c(0, 1),
+      breaks = seq(0, 1.0, by = .2),
+      expand = c(0, 0)
+    ) +
+    scale_fill_manual(
+      values = if (group_var2 == "Type") type_colors else NULL
+    ) +
+    theme_minimal() +
+    theme(
+      legend.position = "right",
+      legend.key.size = unit(0.8,"line"),
+      axis.title.y = element_blank(),
+      panel.background = element_rect(fill = "white", color = "white"),
+      plot.background = element_rect(fill = "white", color = "white")
+    )
+}
+```
+```{r plots by task, showing model and type}
+
+# Filter data for the 'word' task
+word_task_data <- combined_data %>%
+  filter(Task == "word")
+
+# Filter data for the 'word' task
+emoji_task_data <- combined_data %>%
+  filter(Task == "emoji")
+
+# Filter data for the 'word' task
+digit_task_data <- combined_data %>%
+  filter(Task == "digit")
+
+# Filter data for the 'word' task
+letter_task_data <- combined_data %>%
+  filter(Task == "letter")
+
+# Create the plot
+plot_word_task <- plot_accuracy(word_task_data, "Model", "Type", "Accuracy by Model and Type (Word Task)")
+plot_emoji_task <- plot_accuracy(emoji_task_data, "Model", "Type", "Accuracy by Model and Type (Emoji Task)")
+plot_digit_task <- plot_accuracy(digit_task_data, "Model", "Type", "Accuracy by Model and Type (digit Task)")
+plot_letter_task <- plot_accuracy(letter_task_data, "Model", "Type", "Accuracy by Model and Type (letter Task)")
+
+plot_word_task
+plot_emoji_task
+plot_digit_task
+plot_letter_task
+```
+```{r saving plots}
+# Save the plot as a PNG file
+ggsave("accuracy_by_model_and_type_word_task.png", plot = plot_word_task, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_model_and_type_emoji_task.png", plot = plot_emoji_task, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_model_and_type_digit_task.png", plot = plot_digit_task, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_model_and_type_letter_task.png", plot = plot_letter_task, width = 8, height = 6, dpi = 300)
+```
+
+```{r plots by model, showing type and task BETTER FOR PAPER}
+gpt_3.5_data <- combined_data %>%
+  filter(Model == "GPT-3.5 Turbo")
+
+gpt_4o_data <- combined_data %>%
+  filter(Model == "GPT-4o")
+
+gpt_4o_m_data <- combined_data %>%
+  filter(Model == "GPT-4o mini")
+
+L3.2_3B_data <- combined_data %>%
+  filter(Model == "Llama 3.2 3B")
+
+L3.2_1B_data <- combined_data %>%
+  filter(Model == "Llama 3.2 1B")
+
+L3.1_8B_data <- combined_data %>%
+  filter(Model == "Llama 3.1 8B")
+
+
+# Create the plot
+plot_gpt_3.5 <- plot_accuracy(gpt_3.5_data, "Task", "Type", "GPT-3.5 Turbo")
+plot_gpt_4o <- plot_accuracy(gpt_4o_data, "Task", "Type", "GPT-4o")
+plot_gpt_4o_m <- plot_accuracy(gpt_4o_m_data, "Task", "Type", "GPT-4o mini")
+plot_L3.2_3B <- plot_accuracy(L3.2_3B_data, "Task", "Type", "Llama 3.2 3B")
+plot_L3.2_1B <- plot_accuracy(L3.2_1B_data, "Task", "Type", "Llama 3.2 1B")
+plot_L3.1_8B <- plot_accuracy(L3.1_8B_data, "Task", "Type", "Llama 3.1 8B")
+
+plot_L3.2_1B
+plot_gpt_4o_m
+```
+```{r}
+ggsave("accuracy_by_type_and_task_gpt_3.5.png", plot = plot_gpt_3.5, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_type_and_task_gpt_4o.png", plot = plot_gpt_4o, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_type_and_task_gpt_4o_m.png", plot = plot_gpt_4o_m, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_type_and_task_L3.2_3B.png", plot = plot_L3.2_3B, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_type_and_task_L3.2_1B.png", plot = plot_L3.2_1B, width = 8, height = 6, dpi = 300)
+ggsave("accuracy_by_type_and_task_L3.1_8B.png", plot = plot_L3.1_8B, width = 8, height = 6, dpi = 300)
+
+```
+
+```{r combining plots by model}
+library("patchwork")
+plot_gpt_3.5+plot_gpt_4o+plot_L3.1_8B+plot_L3.2_3B+plot_layout(guides = 'collect')
+ggsave("test_plot_1.png", dpi = 300, width = 9, height = 5)
+```
+
+```{r accuracy by model and task}
+
+# Define a custom color palette for the models
+model_colors <- c(
+  "Llama 3.2 1B"    = "#a6cee3",
+  "Llama 3.2 3B"    = "#1f78b4",
+  "Llama 3.1 8B"    = "#b2df8a",
+  "GPT-3.5 Turbo"   = "#33a02c",
+  "GPT-4o mini"     = "#fb9a99",
+  "GPT-4o"          = "#e31a1c"
+)
+
+# Compute average accuracy per Task and Model
+accuracy_summary <- combined_data %>%
+  group_by(Model, Task) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total)
+  ) %>%
+  ungroup()
+
+
+# Reorder the 'model' factor with the specific order
+accuracy_summary$Model <- factor(accuracy_summary$Model, levels = c("Llama 3.2 1B","Llama 3.2 3B","Llama 3.1 8B","GPT-3.5 Turbo","GPT-4o mini","GPT-4o"))
+
+accuracy_summary$Task <- factor(str_to_title(accuracy_summary$Task), levels = c("Digit", "Letter", "Word", "Emoji"))
+# Create the grouped bar plot
+plot_1 <- ggplot(accuracy_summary, aes(x = Task, y = accuracy, fill = Model)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7), color = "black", width = 0.7) +
+  labs(x = "Task",y = "Accuracy (%)",fill = "Model") +
+  scale_y_continuous(
+    limits = c(0, 1),   # Set the Y-axis limits from 0 to 100
+    breaks = seq(0, 1, by = .2),  # Specify the breaks for the Y-axis labels
+    expand = c(0, 0)  # No extra space at the top or bottom
+  ) +
+  scale_fill_manual(values = model_colors) + 
+  theme_minimal(base_size = 24) +  # Minimal theme for clean look
+  theme(
+    text = element_text(size = 24),  # Makes text readable for a research paper
+    axis.title.y = element_blank(),
+    legend.position = "inside",  # Places legend clearly
+    legend.position.inside = c(0.425, 0.7),
+    legend.background = element_rect(fill = "white", color = "black"),
+    panel.background = element_rect(fill = "white", color = "white"),  # Set background to white
+    plot.background = element_rect(fill = "white", color = "white")  # Ensure entire plot background is white
+  )
+plot_1
+
+```
+```{r}
+ggsave("accuracy_by_model_and_task.png", plot = plot_1, width = 8, height = 6, dpi = 300)
+```
+
+```{r accuracy by category}
+# Compute average accuracy per Task and Model
+accuracy_summary <- combined_data %>%
+  group_by(model, task, Category) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total) * 100
+  ) %>%
+  ungroup()
+
+
+# Create the grouped bar plot with non-overlapping bars and a white background
+plot <- ggplot(accuracy_summary, aes(x = interaction(model, task), y = accuracy, fill = Category)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8), color = "black", width = 0.7) + 
+  labs(title = "Accuracy by Model, Task, and Category",
+       x = "Model and Task",
+       y = "Accuracy (%)",
+       fill = "Category") + 
+  theme_minimal() +  # Minimal theme for clean look
+  theme(
+    text = element_text(size = 14),  # Makes text readable for a research paper
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for better clarity
+    legend.position = "right",  # Places legend clearly
+    panel.background = element_rect(fill = "white", color = "white"),  # Set background to white
+    plot.background = element_rect(fill = "white", color = "white")  # Ensure entire plot background is white
+  )
+
+ggsave("accuracy_by_model_cat.png", plot = plot, width = 10, height = 6, dpi = 300)
+```
+
+```{r}
+ambiguous <- c("comp_neg_dis", "comp_pos_dis", "simple_pos_dis", "simple_neg_dis", "simple_neg_conj", "comp_neg_conj")
+better_models <- c("GPT-3.5 Turbo", "GPT-4o", "GPT-4o mini")
+# Filter and summarize the correct responses by Type, Task, and Response
+summary_df <- combined_data %>%
+  filter(Type %in% ambiguous, Matched.Response %in% c(0, 1)) %>%
+  filter(Model %in% better_models) %>%
+  group_by(Task, Type, Matched.Response) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Task, Type) %>%
+  mutate(prop = n / sum(n)) %>%
+  ungroup()
+
+# Plot: proportion of each correct response (0 or 1), split by Task
+ggplot(summary_df, aes(x = Type, y = prop, fill = factor(Matched.Response))) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  facet_wrap(~ Task) +
+  labs(x = "Construction Type", y = "Proportion of Correct Responses",
+       fill = "Response") +
+  scale_fill_manual(values = c("0" = "#a6cee3", "1" = "#1f78b4"),
+                    labels = c("Response 1", "Response 2")) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+    )
+
+```
+
+```{r}
+# STATS
+# Compute mean accuracy and confidence intervals
+summary_stats <- combined_data %>%
+  group_by(task, Type, Category, model) %>%
+  summarise(
+    total = n(),
+    correct = sum(Correct),
+    accuracy = (correct / total) * 100,
+    se = sqrt((accuracy * (100 - accuracy)) / total), # Standard error
+    lower_ci = accuracy - 1.96 * se, # 95% CI lower bound
+    upper_ci = accuracy + 1.96 * se  # 95% CI upper bound
+  ) %>%
+  ungroup()
+
+summary_stats
+```
+
+```{r binomial test}
+combined_data %>%
+  group_by(model, task) %>%
+  summarise(
+    p_value = binom.test(sum(Correct), n(), p = 0.5)$p.value
+  )
+```
+
+```{r making iterations unique by task type}
+combined_data_exp2 <- combined_data
+combined_data_exp2$Iteration <- as.numeric(combined_data_exp2$Iteration)
+
+combined_data_exp2 <- combined_data_exp2 %>%
+  mutate(
+    Iteration = case_when(
+      Task == "emoji" ~ Iteration + 20,
+      Task == "letter" ~ Iteration + 40,
+      Task == "word" ~ Iteration + 60,
+      TRUE ~ Iteration
+    )
+  )
+```
+
+```{r statistical tests}
+# stats
+
+mixed_model_all_exp2 <- glmer(
+  Correct ~ Task * Model + (1 | Iteration),
+  data = combined_data_exp2,
+  family = binomial,
+  control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))
+)
+# Display summary with p-values
+summary(mixed_model_all_exp2)
+# Perform a Type III ANOVA
+anova_results <- Anova(mixed_model_all_exp2, type = "3")
+
+# View results
+print(anova_results)
+```
+
+```{r}
+# Display summary with p-values
+summary(mixed_model_all_exp2)
+# Perform a Type III ANOVA
+anova_results <- Anova(mixed_model_all_exp2, type = "3")
+
+# View results
+print(anova_results)
+```
+
+```{r emmeans}
+# Get estimated marginal means for each combination
+em_exp2 <- emmeans(mixed_model_all, ~ Task | Model , type = "response")
+# em_exp2 <- emmeans(mixed_model_all_exp2, ~ Task, type = "response")
+
+# Compare contradiction vs non-contradiction within each model & instruction
+contrast_results <- contrast(em_exp2, method = "pairwise")
+
+# View the results
+summary(contrast_results, infer = TRUE)
+
+```

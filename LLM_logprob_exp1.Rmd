@@ -1,0 +1,148 @@
+---
+title: "LLM_logprob_exp1"
+author: "Carson Chiem"
+date: "2025-01-17"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+# Importing packages and data
+library(tidyverse)
+library(ordinal)
+dataset_1 = read_csv("output_data/output_responses_llama_3.1_8b_logprob_exp1.csv")
+dataset_2 = read_csv("output_data/output_responses_llama_3.2_1b_logprob_exp1.csv")
+dataset_3 = read_csv("output_data/output_responses_llama_3.2_3b_logprob_exp1.csv")
+
+dataset_2$Model <- "Llama 3.2 1B"
+dataset_3$Model <- "Llama 3.2 3B"
+dataset_1$Model <- "Llama 3.1 8B"
+
+# Combine all dataframes into one
+dataset <- bind_rows(
+  dataset_1,
+  dataset_2,
+  dataset_3
+)
+
+```
+
+```{r}
+
+dataset <- dataset %>%
+  mutate(
+    LogProb = as.numeric(str_remove_all(LogProb, "\\[|\\]")),
+    Contradiction = ifelse(Type == "control", "2", Contradiction)
+    )
+
+# Convert relevant columns to factors for clarity
+dataset$Contradiction <- as.factor(dataset$Contradiction)
+dataset$Connective <- as.factor(dataset$Connective)
+
+```
+
+```{r split into exp and con}
+# Split into experimental and control subsets
+experimental_data <- dataset %>% filter(Type == "experimental")
+control_data <- dataset %>% filter(Type == "control")
+```
+
+```{r mean logprobs for exp and con}
+# Mean log probability for experimental data
+mean_logprob_experimental <- experimental_data %>%
+  group_by(Connective, Model) %>%
+  summarise(
+    MeanLogProb = mean(LogProb, na.rm = TRUE),
+    SDLogProb = sd(LogProb, na.rm = TRUE),
+    Count = n()
+  )
+
+print(mean_logprob_experimental)
+
+# Mean log probability for control data
+mean_logprob_control <- control_data %>%
+  group_by(Connective, Model) %>%
+  summarise(
+    MeanLogProb = mean(LogProb, na.rm = TRUE),
+    SDLogProb = sd(LogProb, na.rm = TRUE),
+    Count = n()
+  )
+
+print(mean_logprob_control)
+newdf <- rbind(mean_logprob_experimental, mean_logprob_control)
+print(newdf, n_extra = 1e3)
+```
+```{r mean_logprob_all and plotting}
+mean_logprob_all <- dataset %>%
+  group_by(Contradiction, Model) %>%
+  summarise(
+    MeanLogProb = mean(LogProb, na.rm = TRUE),
+    SDLogProb = sd(LogProb, na.rm = TRUE),
+    Count = n()
+  )
+print(mean_logprob_all)
+
+mean_logprob_all <- mean_logprob_all %>%
+  mutate(
+    Model = factor(Model, levels = c("Llama 3.2 1B", "Llama 3.2 3B", "Llama 3.1 8B")),
+    Contradiction = factor(Contradiction, levels = c(1, 0, 2), labels = c(" Contradictory", "Non-Contradictory", "Control")),
+    Count = as.numeric(Count)
+  )
+
+mean_logprob_all <- mean_logprob_all %>%
+  mutate(se = SDLogProb / sqrt(Count))
+
+# Plot
+ggplot(mean_logprob_all, aes(x = Model, y = MeanLogProb, fill = Contradiction)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, color = "black") +
+  geom_errorbar(aes(ymin = MeanLogProb - se, ymax = MeanLogProb + se),
+                position = position_dodge(width = 0.7), width = 0.2) +
+  labs(
+    y = "Mean Log Probability",
+    x = "Model",
+    fill = "Connective Category"
+  ) +
+  scale_y_continuous(
+      limits = c(-5,0),
+      expand = c(0, 0)
+    ) +
+  theme_minimal(base_size = 25) +
+  theme(
+    legend.position = "top",
+    legend.title = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
+
+ggsave("logprob_plot.png",dpi = 300, width = 9, height = 7)
+```
+
+
+
+```{r}
+shapiro.test(experimental_data$LogProb[experimental_data$Contradiction == 1])  # Contradictory
+shapiro.test(experimental_data$LogProb[experimental_data$Contradiction == 0])  # Non-Contradictory
+```
+
+```{r}
+# Group connectives by contradiction status and calculate mean log probabilities
+mean_logprob_contradiction <- experimental_data %>%
+  group_by(Contradiction) %>%
+  summarise(
+    MeanLogProb = mean(LogProb, na.rm = TRUE)
+  )
+
+print(mean_logprob_contradiction)
+
+# Shapiro-Wilk test for normality
+shapiro.test(resid(aov(LogProb ~ Contradiction, data = experimental_data)))
+
+library(car)
+leveneTest(LogProb ~ Contradiction, data = experimental_data)
+
+wilcox.test(LogProb ~ Contradiction, data = experimental_data)
+```
+

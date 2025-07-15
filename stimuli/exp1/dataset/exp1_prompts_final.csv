@@ -1,0 +1,387 @@
+Sentence,Type,P,Not P,Contradiction,Connective
+She likes apples and she does not like apples.,experimental,She likes apples.,She does not like apples.,1,and
+She likes apples if she does not like apples.,experimental,She likes apples.,She does not like apples.,1,if
+She likes apples so she does not like apples.,experimental,She likes apples.,She does not like apples.,1,so
+She likes apples therefore she does not like apples.,experimental,She likes apples.,She does not like apples.,1,therefore
+She likes apples but she does not like apples.,experimental,She likes apples.,She does not like apples.,1,but
+She likes apples when she does not like apples.,experimental,She likes apples.,She does not like apples.,1,when
+She likes apples although she does not like apples.,experimental,She likes apples.,She does not like apples.,1,although
+She likes apples or she does not like apples.,experimental,She likes apples.,She does not like apples.,0,or
+"Maybe she likes apples, maybe she does not like apples.",experimental,She likes apples.,She does not like apples.,0,maybe
+"Perhaps she likes apples, perhaps she does not like apples.",experimental,She likes apples.,She does not like apples.,0,perhaps
+She might like apples and she might not like apples.,experimental,She likes apples.,She does not like apples.,0,might
+Jim was born in California and Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,and
+Jim was born in California if Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,if
+Jim was born in California so Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,so
+Jim was born in California therefore Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,therefore
+Jim was born in California but Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,but
+Jim was born in California when Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,when
+Jim was born in California although Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,1,although
+Jim was born in California or Jim was not born in California.,experimental,Jim was born in California.,Jim was not born in California.,0,or
+"Maybe Jim was born in California, maybe Jim was not born in California.",experimental,Jim was born in California.,Jim was not born in California.,0,maybe
+"Perhaps Jim was born in California, perhaps Jim was not born in California.",experimental,Jim was born in California.,Jim was not born in California.,0,perhaps
+Jim might be born in California and Jim might not be born in California.,experimental,Jim was born in California.,Jim was not born in California.,0,might
+The dog is alive and the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,and
+The dog is alive if the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,if
+The dog is alive so the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,so
+The dog is alive therefore the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,therefore
+The dog is alive but the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,but
+The dog is alive when the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,when
+The dog is alive although the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,1,although
+The dog is alive or the dog is not alive.,experimental,The dog is alive.,The dog is not alive.,0,or
+"Maybe the dog is alive, maybe the dog is not alive.",experimental,The dog is alive.,The dog is not alive.,0,maybe
+"Perhaps the dog is alive, perhaps the dog is not alive.",experimental,The dog is alive.,The dog is not alive.,0,perhaps
+The dog might be alive and the dog might not be alive.,experimental,The dog is alive.,The dog is not alive.,0,might
+The cat chases the mouse and the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,and
+The cat chases the mouse if the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,if
+The cat chases the mouse so the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,so
+The cat chases the mouse therefore the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,therefore
+The cat chases the mouse but the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,but
+The cat chases the mouse when the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,when
+The cat chases the mouse although the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,1,although
+The cat chases the mouse or the cat does not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,0,or
+"Maybe the cat chases the mouse, maybe the cat does not chase the mouse.",experimental,The cat chases the mouse.,The cat does not chase the mouse.,0,maybe
+"Perhaps the cat chases the mouse, perhaps the cat does not chase the mouse.",experimental,The cat chases the mouse.,The cat does not chase the mouse.,0,perhaps
+The cat might chase the mouse and the cat might not chase the mouse.,experimental,The cat chases the mouse.,The cat does not chase the mouse.,0,might
+I have a car and I do not have a car.,experimental,I have a car.,I do not have a car.,1,and
+I have a car if I do not have a car.,experimental,I have a car.,I do not have a car.,1,if
+I have a car so I do not have a car.,experimental,I have a car.,I do not have a car.,1,so
+I have a car therefore I do not have a car.,experimental,I have a car.,I do not have a car.,1,therefore
+I have a car but I do not have a car.,experimental,I have a car.,I do not have a car.,1,but
+I have a car when I do not have a car.,experimental,I have a car.,I do not have a car.,1,when
+I have a car although I do not have a car.,experimental,I have a car.,I do not have a car.,1,although
+I have a car or I do not have a car.,experimental,I have a car.,I do not have a car.,0,or
+"Maybe I have a car, maybe I do not have a car.",experimental,I have a car.,I do not have a car.,0,maybe
+"Perhaps I have a car, perhaps I do not have a car.",experimental,I have a car.,I do not have a car.,0,perhaps
+I might have a car and I might not have a car.,experimental,I have a car.,I do not have a car.,0,might
+The boy is playing soccer and the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,and
+The boy is playing soccer if the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,if
+The boy is playing soccer so the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,so
+The boy is playing soccer therefore the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,therefore
+The boy is playing soccer but the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,but
+The boy is playing soccer when the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,when
+The boy is playing soccer although the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,1,although
+The boy is playing soccer or the boy is not playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,0,or
+"Maybe the boy is playing soccer, maybe the boy is not playing soccer.",experimental,The boy is playing soccer.,The boy is not playing soccer.,0,maybe
+"Perhaps the boy is playing soccer, perhaps the boy is not playing soccer.",experimental,The boy is playing soccer.,The boy is not playing soccer.,0,perhaps
+The boy might be playing soccer and the boy might not be playing soccer.,experimental,The boy is playing soccer.,The boy is not playing soccer.,0,might
+Jim showed the man his tickets and Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,and
+Jim showed the man his tickets if Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,if
+Jim showed the man his tickets so Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,so
+Jim showed the man his tickets therefore Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,therefore
+Jim showed the man his tickets but Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,but
+Jim showed the man his tickets when Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,when
+Jim showed the man his tickets although Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,1,although
+Jim showed the man his tickets or Jim did not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,0,or
+"Maybe Jim showed the man his tickets, maybe Jim did not show the man his tickets.",experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,0,maybe
+"Perhaps Jim showed the man his tickets, perhaps Jim did not show the man his tickets.",experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,0,perhaps
+Jim might show the man his tickets and Jim might not show the man his tickets.,experimental,Jim showed the man his tickets.,Jim did not show the man his tickets.,0,might
+Steve went to New York and Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,and
+Steve went to New York if Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,if
+Steve went to New York so Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,so
+Steve went to New York therefore Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,therefore
+Steve went to New York but Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,but
+Steve went to New York when Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,when
+Steve went to New York although Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,1,although
+Steve went to New York or Steve did not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,0,or
+"Maybe Steve went to New York, maybe Steve did not go to New York.",experimental,Steve went to New York.,Steve did not go to New York.,0,maybe
+"Perhaps Steve went to New York, perhaps Steve did not go to New York.",experimental,Steve went to New York.,Steve did not go to New York.,0,perhaps
+Steve might go to New York and Steve might not go to New York.,experimental,Steve went to New York.,Steve did not go to New York.,0,might
+The kids go to the mall and the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,and
+The kids go to the mall if the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,if
+The kids go to the mall so the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,so
+The kids go to the mall therefore the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,therefore
+The kids go to the mall but the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,but
+The kids go to the mall when the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,when
+The kids go to the mall although the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,1,although
+The kids go to the mall or the kids do not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,0,or
+"Maybe the kids go to the mall, maybe the kids do not go to the mall.",experimental,The kids go to the mall.,The kids do not go to the mall.,0,maybe
+"Perhaps the kids go to the mall, perhaps the kids do not go to the mall.",experimental,The kids go to the mall.,The kids do not go to the mall.,0,perhaps
+The kids might go to the mall and the kids might not go to the mall.,experimental,The kids go to the mall.,The kids do not go to the mall.,0,might
+The man has forgotten to do his homework and the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,and
+The man has forgotten to do his homework if the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,if
+The man has forgotten to do his homework so the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,so
+The man has forgotten to do his homework therefore the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,therefore
+The man has forgotten to do his homework but the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,but
+The man has forgotten to do his homework when the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,when
+The man has forgotten to do his homework although the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,1,although
+The man has forgotten to do his homework or the man has not forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,0,or
+"Maybe the man has forgotten to do his homework, maybe the man has not forgotten to do his homework.",experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,0,maybe
+"Perhaps the man has forgotten to do his homework, perhaps the man has not forgotten to do his homework.",experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,0,perhaps
+The man might have forgotten to do his homework and the man might not have forgotten to do his homework.,experimental,The man has forgotten to do his homework.,The man has not forgotten to do his homework.,0,might
+The mansion has ten rooms and the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,and
+The mansion has ten rooms if the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,if
+The mansion has ten rooms so the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,so
+The mansion has ten rooms therefore the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,therefore
+The mansion has ten rooms but the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,but
+The mansion has ten rooms when the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,when
+The mansion has ten rooms although the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,1,although
+The mansion has ten rooms or the mansion does not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,0,or
+"Maybe the mansion has ten rooms, maybe the mansion does not have ten rooms.",experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,0,maybe
+"Perhaps the mansion has ten rooms, perhaps the mansion does not have ten rooms.",experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,0,perhaps
+The mansion might have ten rooms and the mansion might not have ten rooms.,experimental,The mansion has ten rooms.,The mansion does not have ten rooms.,0,might
+The tea in the kettle is done brewing and the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,and
+The tea in the kettle is done brewing if the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,if
+The tea in the kettle is done brewing so the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,so
+The tea in the kettle is done brewing therefore the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,therefore
+The tea in the kettle is done brewing but the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,but
+The tea in the kettle is done brewing when the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,when
+The tea in the kettle is done brewing although the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,1,although
+The tea in the kettle is done brewing or the tea in the kettle is not done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,0,or
+"Maybe the tea in the kettle is done brewing, maybe the tea in the kettle is not done brewing.",experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,0,maybe
+"Perhaps the tea in the kettle is done brewing, perhaps the tea in the kettle is not done brewing.",experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,0,perhaps
+The tea in the kettle might be done brewing and the tea in the kettle might not be done brewing.,experimental,The tea in the kettle is done brewing.,The tea in the kettle is not done brewing.,0,might
+The teacher assigned homework for the week and the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,and
+The teacher assigned homework for the week if the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,if
+The teacher assigned homework for the week so the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,so
+The teacher assigned homework for the week therefore the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,therefore
+The teacher assigned homework for the week but the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,but
+The teacher assigned homework for the week when the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,when
+The teacher assigned homework for the week although the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,1,although
+The teacher assigned homework for the week or the teacher did not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,0,or
+"Maybe the teacher assigned homework for the week, maybe the teacher did not assign homework for the week.",experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,0,maybe
+"Perhaps the teacher assigned homework for the week, perhaps the teacher did not assign homework for the week.",experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,0,perhaps
+The teacher might assign homework for the week and the teacher might not assign homework for the week.,experimental,The teacher assigned homework for the week.,The teacher did not assign homework for the week.,0,might
+I ran into my classmate at the mall and I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,and
+I ran into my classmate at the mall if I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,if
+I ran into my classmate at the mall so I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,so
+I ran into my classmate at the mall therefore I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,therefore
+I ran into my classmate at the mall but I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,but
+I ran into my classmate at the mall when I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,when
+I ran into my classmate at the mall although I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,1,although
+I ran into my classmate at the mall or I did not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,0,or
+"Maybe I ran into my classmate at the mall, maybe I did not run into my classmate at the mall.",experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,0,maybe
+"Perhaps I ran into my classmate at the mall, perhaps I did not run into my classmate at the mall.",experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,0,perhaps
+I might run into my classmate at the mall and I might not run into my classmate at the mall.,experimental,I ran into my classmate at the mall.,I did not run into my classmate at the mall.,0,might
+I called Anna twice today and I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,and
+I called Anna twice today if I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,if
+I called Anna twice today so I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,so
+I called Anna twice today therefore I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,therefore
+I called Anna twice today but I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,but
+I called Anna twice today when I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,when
+I called Anna twice today although I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,1,although
+I called Anna twice today or I did not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,0,or
+"Maybe I called Anna twice today, maybe I did not call Anna twice today.",experimental,I called Anna twice today.,I did not call Anna twice today.,0,maybe
+"Perhaps I called Anna twice today, perhaps I did not call Anna twice today.",experimental,I called Anna twice today.,I did not call Anna twice today.,0,perhaps
+I might call Anna twice today and I might not call Anna twice today.,experimental,I called Anna twice today.,I did not call Anna twice today.,0,might
+This wedding ceremony was held outdoors and this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,and
+This wedding ceremony was held outdoors if this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,if
+This wedding ceremony was held outdoors so this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,so
+This wedding ceremony was held outdoors therefore this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,therefore
+This wedding ceremony was held outdoors but this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,but
+This wedding ceremony was held outdoors when this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,when
+This wedding ceremony was held outdoors although this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,1,although
+This wedding ceremony was held outdoors or this wedding ceremony was not held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,0,or
+"Maybe this wedding ceremony was held outdoors, maybe this wedding ceremony was not held outdoors.",experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,0,maybe
+"Perhaps this wedding ceremony was held outdoors, perhaps this wedding ceremony was not held outdoors.",experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,0,perhaps
+This wedding ceremony might be held outdoors and this wedding ceremony might not be held outdoors.,experimental,This wedding ceremony was held outdoors.,This wedding ceremony was not held outdoors.,0,might
+The soccer game was very exciting and the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,and
+The soccer game was very exciting if the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,if
+The soccer game was very exciting so the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,so
+The soccer game was very exciting therefore the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,therefore
+The soccer game was very exciting but the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,but
+The soccer game was very exciting when the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,when
+The soccer game was very exciting although the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,1,although
+The soccer game was very exciting or the soccer game was not very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,0,or
+"Maybe the soccer game was very exciting, maybe the soccer game was not very exciting.",experimental,The soccer game was very exciting.,The soccer game was not very exciting.,0,maybe
+"Perhaps the soccer game was very exciting, perhaps the soccer game was not very exciting.",experimental,The soccer game was very exciting.,The soccer game was not very exciting.,0,perhaps
+The soccer game might be very exciting and the soccer game might not be very exciting.,experimental,The soccer game was very exciting.,The soccer game was not very exciting.,0,might
+The trash is overflowing in my apartment and the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,and
+The trash is overflowing in my apartment if the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,if
+The trash is overflowing in my apartment so the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,so
+The trash is overflowing in my apartment therefore the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,therefore
+The trash is overflowing in my apartment but the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,but
+The trash is overflowing in my apartment when the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,when
+The trash is overflowing in my apartment although the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,1,although
+The trash is overflowing in my apartment or the trash is not overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,0,or
+"Maybe the trash is overflowing in my apartment, maybe the trash is not overflowing in my apartment.",experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,0,maybe
+"Perhaps the trash is overflowing in my apartment, perhaps the trash is not overflowing in my apartment.",experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,0,perhaps
+The trash might be overflowing in my apartment and the trash might not be overflowing in my apartment.,experimental,The trash is overflowing in my apartment.,The trash is not overflowing in my apartment.,0,might
+My dog weighs ten pounds and my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,and
+My dog weighs ten pounds if my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,if
+My dog weighs ten pounds so my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,so
+My dog weighs ten pounds therefore my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,therefore
+My dog weighs ten pounds but my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,but
+My dog weighs ten pounds when my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,when
+My dog weighs ten pounds although my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,1,although
+My dog weighs ten pounds or my dog does not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,0,or
+"Maybe my dog weighs ten pounds, maybe my dog does not weigh ten pounds.",experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,0,maybe
+"Perhaps my dog weighs ten pounds, perhaps my dog does not weigh ten pounds.",experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,0,perhaps
+My dog might weigh ten pounds and my dog might not weigh ten pounds.,experimental,My dog weighs ten pounds.,My dog does not weigh ten pounds.,0,might
+The tree in my backyard has green leaves and the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,and
+The tree in my backyard has green leaves if the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,if
+The tree in my backyard has green leaves so the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,so
+The tree in my backyard has green leaves therefore the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,therefore
+The tree in my backyard has green leaves but the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,but
+The tree in my backyard has green leaves when the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,when
+The tree in my backyard has green leaves although the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,1,although
+The tree in my backyard has green leaves or the tree in my backyard does not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,0,or
+"Maybe the tree in my backyard has green leaves, maybe the tree in my backyard does not have green leaves.",experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,0,maybe
+"Perhaps the tree in my backyard has green leaves, perhaps the tree in my backyard does not have green leaves.",experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,0,perhaps
+The tree in my backyard might have green leaves and the tree in my backyard might not have green leaves.,experimental,The tree in my backyard has green leaves.,The tree in my backyard does not have green leaves.,0,might
+My sister told me to walk the dog and my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,and
+My sister told me to walk the dog if my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,if
+My sister told me to walk the dog so my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,so
+My sister told me to walk the dog therefore my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,therefore
+My sister told me to walk the dog but my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,but
+My sister told me to walk the dog when my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,when
+My sister told me to walk the dog although my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,1,although
+My sister told me to walk the dog or my sister did not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,0,or
+"Maybe my sister told me to walk the dog, maybe my sister did not tell me to walk the dog.",experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,0,maybe
+"Perhaps my sister told me to walk the dog, perhaps my sister did not tell me to walk the dog.",experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,0,perhaps
+My sister might tell me to walk the dog and my sister might not tell me to walk the dog.,experimental,My sister told me to walk the dog.,My sister did not tell me to walk the dog.,0,might
+The books on the shelf are all hard cover and the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,and
+The books on the shelf are all hard cover if the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,if
+The books on the shelf are all hard cover so the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,so
+The books on the shelf are all hard cover therefore the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,therefore
+The books on the shelf are all hard cover but the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,but
+The books on the shelf are all hard cover when the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,when
+The books on the shelf are all hard cover although the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,1,although
+The books on the shelf are all hard cover or the books on the shelf are not all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,0,or
+"Maybe the books on the shelf are all hard cover, maybe the books on the shelf are not all hard cover.",experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,0,maybe
+"Perhaps the books on the shelf are all hard cover, perhaps the books on the shelf are not all hard cover.",experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,0,perhaps
+The books on the shelf might be all hard cover and the books on the shelf might not be all hard cover.,experimental,The books on the shelf are all hard cover.,The books on the shelf are not all hard cover.,0,might
+The school bus comes on time and the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,and
+The school bus comes on time if the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,if
+The school bus comes on time so the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,so
+The school bus comes on time therefore the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,therefore
+The school bus comes on time but the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,but
+The school bus comes on time when the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,when
+The school bus comes on time although the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,1,although
+The school bus comes on time or the school bus does not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,0,or
+"Maybe the school bus comes on time, maybe the school bus does not come on time.",experimental,The school bus comes on time.,The school bus does not come on time.,0,maybe
+"Perhaps the school bus comes on time, perhaps the school bus does not come on time.",experimental,The school bus comes on time.,The school bus does not come on time.,0,perhaps
+The school bus might come on time and the school bus might not come on time.,experimental,The school bus comes on time.,The school bus does not come on time.,0,might
+Friendship is very important to Sarah and Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,and
+Friendship is very important to Sarah if Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,if
+Friendship is very important to Sarah so Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,so
+Friendship is very important to Sarah therefore Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,therefore
+Friendship is very important to Sarah but Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,but
+Friendship is very important to Sarah when Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,when
+Friendship is very important to Sarah although Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,1,although
+Friendship is very important to Sarah or Friendship is not very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,0,or
+"Maybe Friendship is very important to Sarah ., maybe Friendship is not very important to Sarah.",experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,0,maybe
+"Perhaps Friendship is very important to Sarah ., perhaps Friendship is not very important to Sarah.",experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,0,perhaps
+Friendship might be very important to Sarah and Friendship might not be very important to Sarah.,experimental,Friendship is very important to Sarah.,Friendship is not very important to Sarah.,0,might
+The baseball cap helps keep the sun off my face and the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,and
+The baseball cap helps keep the sun off my face if the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,if
+The baseball cap helps keep the sun off my face so the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,so
+The baseball cap helps keep the sun off my face therefore the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,therefore
+The baseball cap helps keep the sun off my face but the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,but
+The baseball cap helps keep the sun off my face when the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,when
+The baseball cap helps keep the sun off my face although the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,1,although
+The baseball cap helps keep the sun off my face or the baseball cap does not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,0,or
+"Maybe the baseball cap helps keep the sun off my face, maybe the baseball cap does not help keep the sun off my face.",experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,0,maybe
+"Perhaps the baseball cap helps keep the sun off my face, perhaps the baseball cap does not help keep the sun off my face.",experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,0,perhaps
+The baseball cap might help keep the sun off my face and the baseball cap might not help keep the sun off my face.,experimental,The baseball cap helps keep the sun off my face.,The baseball cap does not help keep the sun off my face.,0,might
+I drove to the store to buy some milk and I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,and
+I drove to the store to buy some milk if I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,if
+I drove to the store to buy some milk so I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,so
+I drove to the store to buy some milk therefore I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,therefore
+I drove to the store to buy some milk but I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,but
+I drove to the store to buy some milk when I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,when
+I drove to the store to buy some milk although I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,1,although
+I drove to the store to buy some milk or I did not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,0,or
+"Maybe I drove to the store to buy some milk, maybe I did not drive to the store to buy some milk.",experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,0,maybe
+"Perhaps I drove to the store to buy some milk, perhaps I did not drive to the store to buy some milk.",experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,0,perhaps
+I might drive to the store to buy some milk and I might not drive to the store to buy some milk.,experimental,I drove to the store to buy some milk.,I did not drive to the store to buy some milk.,0,might
+"Perhaps the cat does not chase the mouse, perhaps the kids do not go to the mall.",control,N/A,N/A,0,perhaps
+The books on the shelf are all hard cover and I did not run into my classmate at the mall.,control,N/A,N/A,0,and
+The dog is alive although the baseball cap does not help keep the sun off my face.,control,N/A,N/A,0,although
+"Maybe Jim showed the man his tickets, maybe the dog is not alive.",control,N/A,N/A,0,maybe
+I did not call Anna twice today when I did not run into my classmate at the mall.,control,N/A,N/A,0,when
+Friendship is very important to Sarah although the school bus does not come on time.,control,N/A,N/A,0,although
+This wedding ceremony was held outdoors if the tea in the kettle is not done brewing.,control,N/A,N/A,0,if
+Jim was not born in California although my dog weighs ten pounds.,control,N/A,N/A,0,although
+"Maybe the tree in my backyard does not have green leaves, maybe she likes apples.",control,N/A,N/A,0,maybe
+The cat chases the mouse but the trash is overflowing in my apartment.,control,N/A,N/A,0,but
+The mansion has ten rooms or the tree in my backyard has green leaves.,control,N/A,N/A,0,or
+I might call Anna twice today and friendship might not be very important to Sarah.,control,N/A,N/A,0,might
+The kids do not go to the mall and this wedding ceremony was not held outdoors.,control,N/A,N/A,0,and
+The books on the shelf are all hard cover if I ran into my classmate at the mall.,control,N/A,N/A,0,if
+I drove to the store to buy some milk so this wedding ceremony was not held outdoors.,control,N/A,N/A,0,so
+The mansion might not have ten rooms and I might not run into my classmate at the mall.,control,N/A,N/A,0,might
+"Maybe the tea in the kettle is not done brewing, maybe I ran into my classmate at the mall.",control,N/A,N/A,0,maybe
+My sister did not tell me to walk the dog although I do not have a car.,control,N/A,N/A,0,although
+I do not have a car therefore Friendship is not very important to Sarah.,control,N/A,N/A,0,therefore
+Steve went to New York so my dog does not weigh ten pounds.,control,N/A,N/A,0,so
+My sister did not tell me to walk the dog so the school bus does not come on time.,control,N/A,N/A,0,so
+The boy is not playing soccer so the boy is playing soccer.,control,N/A,N/A,0,so
+I did not drive to the store to buy some milk when the tree in my backyard has green leaves.,control,N/A,N/A,0,when
+The man has forgotten to do his homework but I did not drive to the store to buy some milk.,control,N/A,N/A,0,but
+I do not have a car although the kids go to the mall.,control,N/A,N/A,0,although
+"Maybe the kids go to the mall, maybe the school bus does not come on time.",control,N/A,N/A,0,maybe
+The cat chases the mouse therefore my sister did not tell me to walk the dog.,control,N/A,N/A,0,therefore
+The boy might be playing soccer and this wedding ceremony might be held outdoors.,control,N/A,N/A,0,might
+The dog is alive if I did not drive to the store to buy some milk.,control,N/A,N/A,0,if
+"Perhaps Friendship is not very important to Sarah ., perhaps I do not have a car.",control,N/A,N/A,0,perhaps
+My dog weighs ten pounds although the cat chases the mouse.,control,N/A,N/A,0,although
+My dog weighs ten pounds if Friendship is very important to Sarah.,control,N/A,N/A,0,if
+The dog is not alive when the school bus does not come on time.,control,N/A,N/A,0,when
+"Maybe I did not run into my classmate at the mall, maybe the boy is playing soccer.",control,N/A,N/A,0,maybe
+My dog does not weigh ten pounds if I do not have a car.,control,N/A,N/A,0,if
+The man has not forgotten to do his homework therefore Jim did not show the man his tickets.,control,N/A,N/A,0,therefore
+Steve did not go to New York when my dog weighs ten pounds.,control,N/A,N/A,0,when
+Friendship is not very important to Sarah but my sister told me to walk the dog.,control,N/A,N/A,0,but
+"Maybe my dog does not weigh ten pounds, maybe I did not run into my classmate at the mall.",control,N/A,N/A,0,maybe
+I have a car if Friendship is very important to Sarah.,control,N/A,N/A,0,if
+The books on the shelf are not all hard cover therefore the tea in the kettle is done brewing.,control,N/A,N/A,0,therefore
+My dog weighs ten pounds if the baseball cap helps keep the sun off my face.,control,N/A,N/A,0,if
+My dog does not weigh ten pounds and I drove to the store to buy some milk.,control,N/A,N/A,0,and
+She might not like apples and the dog might be alive.,control,N/A,N/A,0,might
+I drove to the store to buy some milk so the teacher did not assign homework for the week.,control,N/A,N/A,0,so
+The boy is playing soccer when the cat does not chase the mouse.,control,N/A,N/A,0,when
+I ran into my classmate at the mall so the cat chases the mouse.,control,N/A,N/A,0,so
+Steve did not go to New York but Jim did not show the man his tickets.,control,N/A,N/A,0,but
+The teacher might assign homework for the week and Steve might not go to New York.,control,N/A,N/A,0,might
+Friendship is very important to Sarah but the mansion does not have ten rooms.,control,N/A,N/A,0,but
+The tea in the kettle is done brewing although the dog is alive.,control,N/A,N/A,0,although
+Friendship is very important to Sarah and the boy is not playing soccer.,control,N/A,N/A,0,and
+Steve did not go to New York therefore I did not call Anna twice today.,control,N/A,N/A,0,therefore
+The boy is not playing soccer but the man has not forgotten to do his homework.,control,N/A,N/A,0,but
+The school bus comes on time so the tree in my backyard does not have green leaves.,control,N/A,N/A,0,so
+The school bus comes on time when the soccer game was not very exciting.,control,N/A,N/A,0,when
+My dog weighs ten pounds and the tea in the kettle is done brewing.,control,N/A,N/A,0,and
+"Maybe the trash is not overflowing in my apartment, maybe I did not call Anna twice today.",control,N/A,N/A,0,maybe
+The mansion has ten rooms but Friendship is not very important to Sarah.,control,N/A,N/A,0,but
+The teacher did not assign homework for the week so my sister told me to walk the dog.,control,N/A,N/A,0,so
+"Perhaps the books on the shelf are all hard cover, perhaps the mansion has ten rooms.",control,N/A,N/A,0,perhaps
+The boy is not playing soccer but the books on the shelf are all hard cover.,control,N/A,N/A,0,but
+"Perhaps the mansion does not have ten rooms, perhaps I did not call Anna twice today.",control,N/A,N/A,0,perhaps
+"Perhaps I did not drive to the store to buy some milk, perhaps my sister told me to walk the dog.",control,N/A,N/A,0,perhaps
+I might not call Anna twice today and she might not like apples.,control,N/A,N/A,0,might
+My dog does not weigh ten pounds or the man has forgotten to do his homework.,control,N/A,N/A,0,or
+The man has not forgotten to do his homework but the soccer game was very exciting.,control,N/A,N/A,0,but
+The soccer game was very exciting and I called Anna twice today.,control,N/A,N/A,0,and
+The mansion has ten rooms when the tree in my backyard does not have green leaves.,control,N/A,N/A,0,when
+The tree in my backyard has green leaves or Jim did not show the man his tickets.,control,N/A,N/A,0,or
+I did not drive to the store to buy some milk although I called Anna twice today.,control,N/A,N/A,0,although
+The books on the shelf are not all hard cover so Jim showed the man his tickets.,control,N/A,N/A,0,so
+The boy is playing soccer therefore my dog weighs ten pounds.,control,N/A,N/A,0,therefore
+The baseball cap does not help keep the sun off my face therefore my dog weighs ten pounds.,control,N/A,N/A,0,therefore
+I might drive to the store to buy some milk and the baseball cap might not help keep the sun off my face.,control,N/A,N/A,0,might
+The soccer game was very exciting if she does not like apples.,control,N/A,N/A,0,if
+I might call Anna twice today and Steve might go to New York.,control,N/A,N/A,0,might
+The kids go to the mall when I ran into my classmate at the mall.,control,N/A,N/A,0,when
+"Perhaps the kids do not go to the mall, perhaps I ran into my classmate at the mall.",control,N/A,N/A,0,perhaps
+"Maybe Steve did not go to New York, maybe Steve did not go to New York.",control,N/A,N/A,0,maybe
+Friendship is very important to Sarah or Steve did not go to New York.,control,N/A,N/A,0,or
+The trash is overflowing in my apartment therefore the books on the shelf are not all hard cover.,control,N/A,N/A,0,therefore
+The tea in the kettle is done brewing when Friendship is very important to Sarah.,control,N/A,N/A,0,when
+The trash is overflowing in my apartment and the kids go to the mall.,control,N/A,N/A,0,and
+The teacher might not assign homework for the week and the soccer game might not be very exciting.,control,N/A,N/A,0,might
+"Maybe the school bus does not come on time, maybe the tea in the kettle is not done brewing.",control,N/A,N/A,0,maybe
+This wedding ceremony was not held outdoors although friendship is not very important to Sarah.,control,N/A,N/A,0,although
+"Perhaps the school bus does not come on time, perhaps Friendship is very important to Sarah.",control,N/A,N/A,0,perhaps
+"Perhaps the baseball cap does not help keep the sun off my face, perhaps the cat chases the mouse.",control,N/A,N/A,0,perhaps
+"Maybe the tea in the kettle is not done brewing, maybe I did not call Anna twice today.",control,N/A,N/A,0,maybe
+I drove to the store to buy some milk although my sister did not tell me to walk the dog.,control,N/A,N/A,0,although
+I did not run into my classmate at the mall although my dog does not weigh ten pounds.,control,N/A,N/A,0,although
+The tea in the kettle is not done brewing so the boy is not playing soccer.,control,N/A,N/A,0,so
+I did not drive to the store to buy some milk but the teacher did not assign homework for the week.,control,N/A,N/A,0,but
+The man has forgotten to do his homework so the books on the shelf are all hard cover.,control,N/A,N/A,0,so
+The kids might go to the mall and the mansion might have ten rooms.,control,N/A,N/A,0,might
+I might not drive to the store to buy some milk and the baseball cap might not help keep the sun off my face.,control,N/A,N/A,0,might
+"Maybe the soccer game was not very exciting, maybe the books on the shelf are all hard cover.",control,N/A,N/A,0,maybe
+The tea in the kettle is not done brewing although Jim showed the man his tickets.,control,N/A,N/A,0,although
+I do not have a car or Jim was not born in California.,control,N/A,N/A,0,or
